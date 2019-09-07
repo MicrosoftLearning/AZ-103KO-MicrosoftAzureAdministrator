@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: '네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용'
-    모듈: '고급 가상 네트워킹 구현'
+lab:
+    title: '네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용'
+    module: '모듈 06 - 모니터링'
 ---
 
 # 랩: 네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용
@@ -12,13 +12,13 @@
 
 랩 파일: 
 
--  **Allfiles/Labfiles/AZ-101.3/az-101-03b_01_azuredeploy.json**
+-  **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_01_azuredeploy.json**
 
--  **Allfiles/Labfiles/AZ-101.3/az-101-03b_02_azuredeploy.json**
+-  **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_02_azuredeploy.json**
 
--  **Allfiles/Labfiles/AZ-101.3/az-101-03b_01_azuredeploy.parameters.json**
+-  **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_01_azuredeploy.parameters.json**
 
--  **Allfiles/Labfiles/AZ-101.3/az-101-03b_02_azuredeploy.parameters.json**
+-  **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_02_azuredeploy.parameters.json**
 
 
 ### 시나리오
@@ -52,15 +52,15 @@ Adatum Corporation은 Azure 네트워크 감시기를 사용하여 Azure 가상 
 
 1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 탐색하고 대상 Azure 가입에서 소유자 역할을 가진 Microsoft 계정을 사용하여 로그인합니다.
 
-1. Azure 포털에서 **새 **블레이드로 이동합니다.
+1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
-1. **블레이드에서** Azure **마켓플레이스에서** 템플릿 배포를 검색합니다.
+1. **리소스 만들기** 블레이드가 뜨면, Azure 마켓플레이스에서 **Template deployment**를 검색합니다. 그리고 **Template deployment (deploy using custom templates)**를 선택합니다.
 
-1. 검색 결과 목록을 사용하여 **사용자 지정** 배포 블레이드로 이동합니다.
+1. **만들기**를 클릭합니다.
+ 
+1. **사용자 지정 배포** 블레이드에서 **편집기에서 사용자 고유의 템플릿을 빌드합니다.** 를 선택합니다.
 
-1. **사용자 지정 배포** 블레이드에서 **편집기에서 사용자 고유의 템플릿 빌드** 를 선택합니다.
-
-1. **템플릿 편집** 블레이드에서 템플릿 파일 **az-101-03b_01_azuredeploy.json을**로드합니다. 
+1. **템플릿 편집** 블레이드에서 템플릿 파일인 **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_01_azuredeploy.json** 을 로드합니다.
 
    > **참고**: 템플릿의 내용을 검토하고 Azure VM, Azure SQL 데이터베이스 및 Azure Storage 계정의 배포를 정의합니다.
 
@@ -68,45 +68,45 @@ Adatum Corporation은 Azure 네트워크 감시기를 사용하여 Azure 가상 
 
 1. **사용자 지정 배포** 블레이드에서 **매개 변수 편집** 블레이드로 이동합니다.
 
-1. 편집 **매개 변수** 블레이드에서 매개 변수 파일 **az-101-03b_01_azuredeploy.parameters.json** 을 로드합니다. 
+1. 편집 **매개 변수** 블레이드에서 매개 변수 파일 **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_01_azuredeploy.parameters.json** 을 로드합니다. 
 
-1. 매개 변수를 저장하고 **사용자지정 배포** 블레이드로 돌아갑니다. 
+1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
-1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿배포를 시작 합니다.
+1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿 배포를 시작 합니다.
 
     - 구독: 이 실험실에서 사용하려는 구독의 이름
 
-    - 리소스 그룹: 새 리소스 그룹 **az1010301b-RG** 의 이름
+    - 리소스 그룹: **az1010301b-RG** 이름으로 새로 만들기
 
     - 위치: 랩 위치에 가장 가까운 Azure 지역의 이름및 Azure VM 및 Azure SQL Database를 프로비전할 수 있는 위치
 
-    - Vm 크기: **Standard_DS1_v2**
+    - Vm Size: **Standard_DS2_v2**
 
-    - Vm 이름: **az1010301b-vm1**
+    - Vm Name: **az1010301b-vm1**
 
-    - 관리자 사용자 이름: **학생**
+    - Admin Username: **Student**
 
-    - 관리자 암호: **Pa55w.rd1234**
+    - Admin Password: **Pa55w.rd1234**
 
-    - 가상 네트워크 이름: **az1010301b-vnet1**
+    - Virtual Network Name: **az1010301b-vnet1**
 
-    - SQL 로그인 이름: **학생**
+    - Sql Login Name: **Student**
 
-    - SQL 로그인 암호: **Pa55w.rd1234**
+    - Sql Login Password: **Pa55w.rd1234**
 
-    - 데이터베이스 이름: **az1010301b-db1**
+    - Database Name: **az1010301b-db1**
 
-    - 스쿠 이름: **기본**
+    - Sku Name: **Basic**
 
-    - 스쿠 티어: **기본**
+    - Sku Tier: **Basic**
 
-   > **참고**: 지정된 리전에서 구독에서 사용할 수 있는 VM 크기를 식별하려면 Cloud Shell에서 다음을 실행하고 **제한** 열의 값을 검토합니다(여기서 &lt;location>대상 Azure 지역을 나타냅니다).
+   > **참고**: 지정된 리전에서 구독에서 사용할 수 있는 VM 크기를 식별하려면 Cloud Shell에서 다음을 실행하여 **제한** 값을 검토합니다(여기서 &lt;location&gt;은 대상 Azure 지역을 나타냅니다).
    
    ```
    Get-AzComputeResourceSku | where {$_.Locations -icontains "<location>"} | Where-Object {($_.ResourceType -ilike "virtualMachines")}
    ```
    
-   > **참고**: 지정된 리전에서 Azure SQL Database를 프로비전할 수 있는지 여부를 확인하려면 Cloud Shell에서 다음을 실행하고 결과 **상태** 가 **사용 가능** 으로 설정되어 있는지 확인합니다(여기서 &lt&location> 대상 Azure 영역을 나타냅니다):
+   > **참고**: 지정된 리전에서 Azure SQL Database를 프로비전할 수 있는지 여부를 확인하려면 Cloud Shell에서 다음을 실행하고 결과 **상태** 가 **사용 가능** 으로 설정되어 있는지 확인합니다(여기서 &lt;location&gt;은 대상 Azure 영역을 나타냅니다):
 
    ```
    Get-AzSqlCapability -LocationName <location>
@@ -114,15 +114,15 @@ Adatum Corporation은 Azure 네트워크 감시기를 사용하여 Azure 가상 
    
    > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 단계로 진행합니다. 
 
-1. Azure 포털에서 **새** 블레이드로이동합니다.
+1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
-1. **블레이드에서** Azure **마켓플레이스에서** 템플릿 배포를 검색합니다.
+1. **리소스 만들기** 블레이드가 뜨면, Azure 마켓플레이스에서 **Template deployment**를 검색합니다. 그리고 **Template deployment (deploy using custom templates)**를 선택합니다.
 
-1. 검색 결과 목록을 사용하여 **사용자 지정** 배포 블레이드로 이동합니다.
+1. **만들기**를 클릭합니다.
+ 
+1. **사용자 지정 배포** 블레이드에서 **편집기에서 사용자 고유의 템플릿을 빌드합니다.** 를 선택합니다.
 
-1. **사용자 지정 배포** 블레이드에서 **편집기에서 사용자 고유의 템플릿 빌드** 를 선택합니다.
-
-1. **템플릿 편집** 블레이드에서 템플릿 파일 **az-101-03b_02_azuredeploy.json** 을 로드합니다. 
+1. **템플릿 편집** 블레이드에서 템플릿 파일인 **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_02_azuredeploy.json** 을 로드합니다.
 
    > **참고**: 템플릿의 내용을 검토하고 Azure VM의 배포를 정의합니다.
 
@@ -130,27 +130,27 @@ Adatum Corporation은 Azure 네트워크 감시기를 사용하여 Azure 가상 
 
 1. **사용자 지정 배포** 블레이드에서 **매개 변수 편집** 블레이드로 이동합니다.
 
-1. 편집 **파라미터 변수** 블레이드에서 매개 변수 파일 **az-101-03b_02_azuredeploy.parameters.json** 을 로드합니다. 
+1. 편집 **매개 변수** 블레이드에서 매개 변수 파일 **Labfiles\\Module_06\\Network_Watcher\\az-101-03b_02_azuredeploy.parameters.json** 을 로드합니다. 
 
-1. 매개 변수를 저장하고 **사용자지정 배포** 블레이드로 돌아갑니다. 
+1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
-1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿배포를 시작 합니다:
+1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿 배포를 시작 합니다.
 
     - 구독: 이 랩에서 사용 중인 구독의 이름
 
-    - 리소스 그룹: 새 리소스 그룹 **az1010302b-RG** 의 이름
+    - 리소스 그룹: **az1010302b-RG** 이름으로 새로 만들기
 
-    - 위치: Azure VM을 프로비전할 수 있지만 이전 배포 중에 선택한 것과 다른 Azure 영역의 이름입니다. 
+    - 위치: Azure VM을 프로비전할 수 있지만 이전 배포 중에 선택한 것과 **다른** Azure 영역의 이름입니다. 
 
-    - Vm 크기: **Standard_DS1_v2**
+    - Vm Size: **Standard_DS2_v2**
 
-    - Vm 이름: **az1010302b-vm2**
+    - Vm Name: **az1010302b-vm2**
 
-    - 관리자 사용자 이름: **학생**
+    - Admin Username: **Student**
 
-    - 관리자 암호: **Pa55w.rd1234**
+    - Admin Password: **Pa55w.rd1234**
 
-    - 가상 네트워크 이름: **az1010302b-vnet2**
+    - Virtual Network Name: **az1010302b-vnet2**
 
    > **참고**: 이 배포에 대해 다른 Azure 지역을 선택해야 합니다.
 

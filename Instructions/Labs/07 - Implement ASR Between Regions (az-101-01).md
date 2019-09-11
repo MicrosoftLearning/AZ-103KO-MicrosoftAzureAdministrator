@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: 'Azure 지역 간에 Site Resovert 자격 증명 구현'
     module: '모듈 07 - 데이터 보호'

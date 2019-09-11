@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: 'Azure AD ID 보호 구현 및 유효성 검사'
     module: '모듈 10 - 보안 신원'

@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: '네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용'
-    모듈: '고급 가상 네트워킹 구현'
+lab:
+    title: '네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용'
+    module: '고급 가상 네트워킹 구현'
 ---
 
 # 랩: 네트워크 연결 모니터링 및 문제 해결을 위해 Azure Network Watcher 사용

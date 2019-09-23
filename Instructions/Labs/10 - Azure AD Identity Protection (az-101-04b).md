@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: 'Azure AD ID 보호 구현 및 유효성 검사'
-    모듈: '보안 신원’
+lab:
+    title: 'Azure AD ID 보호 구현 및 유효성 검사'
+    module: '보안 신원'
 ---
 
 # 랩: Azure AD ID 보호 구현 및 유효성 검사

@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: 'Azure 지역 간에 Azure 사이트 복구 구현'
-    모듈: ‘서버 마이그레이션'
+lab:
+    title: 'Azure 지역 간에 Azure 사이트 복구 구현'
+    module: '서버 마이그레이션'
 ---
 
 # 랩: Azure 지역 간에 Azure 사이트 복구 구현

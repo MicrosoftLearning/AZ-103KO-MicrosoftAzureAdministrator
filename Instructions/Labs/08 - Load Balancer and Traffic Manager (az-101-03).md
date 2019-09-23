@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: '로드 밸런서 및 Traffic Manager'
-    모듈: '고급 가상 네트워킹 구현'
+lab:
+    title: '로드 밸런서 및 Traffic Manager'
+    module: '고급 가상 네트워킹 구현'
 ---
 
 # 랩: 로드 밸런서 및 Traffic Manager

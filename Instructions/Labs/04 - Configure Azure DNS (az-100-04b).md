@@ -1,7 +1,7 @@
 ﻿---
-랩:
-    제목: 'Azure DNS 구성'
-    모듈: '가상 네트워킹'
+lab:
+    title: 'Azure DNS 구성'
+    module: '가상 네트워킹'
 ---
 
 # 랩: Azure DNS 구성

@@ -1,9 +1,12 @@
 ﻿# AZ-103 Microsoft Azure 관리자
 
-- **[최신 학생 핸드북 및 AllFiles 컨텐저 다운로드](../../releases/latest)**
 - **당신은 MCT입니까?** - [MCT 에대한 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide-KO/)를 살펴보십시오.
+- **랩 지침을 수동으로 빌드해야 합니까?** - 지침은 [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) 리포지토리에서 사용할 수 있습니다.
+- AZ-103 모듈별 랩 목록 보기 - https://microsoftlearning.github.io/AZ-103-MicrosoftAzureAdministrator/
 
 > AZ-100 및 AZ-101 인증은 새로운 AZ-103 Microsoft Azure 관리자 시험으로 대체되고 있습니다! 이 발표에 대한 자세한 내용은 리버티 먼슨의 블로그 https://www.microsoft.com/ko-kr/learning/community-blog-post.aspx?BlogId=8&Id=375217 
+
+> 과정 컨텐츠에 대한 제안이나 일반 의견에는 [MCT Courseware 포럼](https://www.microsoft.com/en-us/learning/mct-central.aspx)을 사용해야 합니다. 또한 버그 및 과정 오류는 [Courseware Support 포럼](https://trainingsupport.microsoft.com/en-us)에 보고할 수 있습니다.
  
 새 시험을 지원하기 위해 2019년 5월 3일부터 새로운 AZ-103 GitHub 리포지토리를 소개합니다. 이 때 해당 리포지토리에 있는 모든 AZ-100 및 AZ-101 랩이 이 리포지토리로 이동됩니다. 이러한 랩은 AZ-103에서 재사용되고 있으며 저장소는 하나만 유지 하려고 합니다. AZ-100 및 AZ-101 실험실 번호 매기기 시스템은 유지되므로 여전히 AZ-100 또는 AZ-101 과정을 가르치고 있다면 실험실을 쉽게 식별할 수 있습니다. 또한 최신 버전의 랩을 얻고 발견한 문제를 제출할 수 있습니다.
 
@@ -22,7 +25,6 @@
 -  스토리지 구현 및 관리(az-100-02)
 -  로드 밸런서 및 트래픽 관리자(az-101-03)
 -  온-프레미스 하이퍼 VM을 Azure로 마이그레이션(az-101-01b)
--  Privileged Identity Management (az-101-04)
 -  역할 기반 액세스 제어(az-100-01)
 -  셀프 서비스 암호 재설정(az-100-05b)
 -  가상 머신 및 스케일 세트(az-100-03b)

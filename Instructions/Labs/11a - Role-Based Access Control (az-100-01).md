@@ -1,14 +1,14 @@
 ﻿---
 lab:
     title: '역할 기반 액세스 제어'
-    module: 'Azure 구독 및 리소스 관리'
+    module: '모듈 11 – 거버넌스 및 준수'
 ---
 
 # 랩: 역할 기반 액세스 제어 
 
-이 랩의 모든 작업은 Azure 포털(PowerShell 클라우드 셸 세션 포함)에서 수행됩니다  
+이 랩의 모든 작업은 Azure Portal(PowerShell Cloud Shell 세션 포함)에서 수행됩니다  
 
-   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 시스템에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0)합니다.
+   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 시스템에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다. [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps)
 
 랩 파일: 없음
 
@@ -18,7 +18,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
 -  기본 제공 역할 기반 액세스 제어(RBAC) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스의 프로비저닝 및 관리 위임을 구성합니다
 
@@ -27,7 +27,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 ### 연습 1: 기본 제공 역할 기반 액세스 제어(RBAC) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스의 프로비저닝 및 관리 위임을 구성합니다
 
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
 1. Azure Active Directory(AD) 사용자 및 그룹 만들기
 
@@ -40,15 +40,15 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 1: Azure AD 사용자 및 그룹 만들기
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 **[http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 ** [http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의.
 
-1. Azure 포털에서 **Azure Active Directory** 블레이드로 이동합니다 
+1. Azure Portal에서 **Azure Active Directory** 블레이드로 이동합니다 
 
 1. **Azure Active Directory** 블레이드에서 **사용자 지정 도메인 이름** 블레이드로 이동하여 AzureAD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 해당 값을 기록합니다 - 이 작업의 나중에 필요합니다.
 
 1. Azure AD **사용자 지정 도메인 이름** 블레이드에서 **사용자 - 모든 사용자** 블레이드로 이동합니다. 
 
-1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다:
+1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다.
 
     - 이름: **aaduser100011**
 
@@ -66,7 +66,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. **사용자 - 모든 사용자** 블레이드, **그룹으로 이동 - 모든 그룹**블레이드. 
 
-1. **그룹에서 - 모든 그룹** 블레이드에서 다음 설정을 사용하여 새 그룹을 만듭니다:
+1. **그룹에서 - 모든 그룹**블레이드에서 다음 설정을 사용하여 새 그룹을 만듭니다.
 
     - 그룹 유형: **보안**
 
@@ -81,9 +81,9 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 2: Azure 리소스 그룹 만들기
 
-1. Azure 포털에서 **리소스 그룹** 블레이드로 이동합니다.
+1. Azure Portal에서 **리소스 그룹** 블레이드로 이동합니다.
 
-1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 첫 번째 리소스 그룹을만듭니다.
+1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 첫 번째 리소스 그룹을 만듭니다.
 
     - 리소스 그룹 이름: **az1000101-RG**
 
@@ -91,26 +91,26 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 리소스 그룹 위치: 랩 위치에 가장 가까운 Azure 지역의 이름및 Azure VM을 프로비전할 수 있는 위치입니다.
 
-   > **참고**: 구독에서 사용할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: 구독에서 사용할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)를 참고하십시오.
 
-1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 두 번째 리소스 그룹을만듭니다.
+1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 두 번째 리소스 그룹을 만듭니다.
 
     - 리소스 그룹 이름: **az1000102-RG**
 
     - 구독: 이전 단계에서 선택한 구독의 이름
 
-    - 리소스 그룹 위치: 이전 단계에서 선택한 Azure 영역의 이름
+    - 리소스 그룹 위치: 이전 단계에서 선택한 Azure 지역의 이름
 
 
 #### 작업 3: 기본 제공 RBAC 역할을 통해 Azure 리소스 그룹의 관리 위임
 
-1. Azure 포털에서 **리소스 그룹** 블레이드에서 **az1000101-RG**블레이드로 이동합니다.
+1. Azure Portal에서 **리소스 그룹** 블레이드에서 **az1000101-RG**블레이드로 이동합니다.
 
-1. **az1000101-RG** 블레이드에서 **IAM(액세스 제어)** 블레이드를 표시합니다.
+1. **az1000101-RG** 블레이드에서 **IAM(액세스 제어)**블레이드를 표시합니다.
 
 1. **az1000101-RG - IAM(액세스 제어)** 블레이드에서 **역할 할당** 블레이드를 표시합니다.
 
-1. **역할 할당** 블레이드에서 다음 **역할 할당** 을 만듭니다:
+1. **역할 할당** 블레이드에서 다음 **역할 할당**을 만듭니다.
 
     - 역할: **기고자**
 
@@ -125,7 +125,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. **정책 - 규정 준수** 블레이드에서 **할당 정책** 블레이드를 표시합니다.
 
-1. 다음 설정으로 정책을 할당합니다:
+1. 다음 설정으로 정책을 할당합니다.
 
     - 범위: **az1000101-RG**
 
@@ -135,20 +135,20 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 과제 이름: **허용된 가상 머신 SKU**
 
-    - 설명: **선택된 가상 머신 SKU 허용(표준_DS1_v2)**
+    - 설명: **선택된 가상 머신 SKU 허용(Standard_DS1_v2)**
 
     - 할부: 항목을 기본값으로 설정
 	
     - 허용된 SKU: **Standard_DS1_v2**
 
-    - 관리되는 ID 만들기: 항목을 비워 둡니다
+    - 관리 ID 만들기: 항목을 비워 둡니다.
 
 > **결과**: 이 연습을 완료한 후 Azure AD 사용자 및 Azure AD 그룹을 만들고, 두 개의 Azure 리소스 그룹을 만들고, 기본 제공 Azure VM 기여자 RBAC 역할을 통해 첫 번째 Azure 리소스 그룹의 관리를 위임하고, 동일한 리소스에 할당했습니다. Azure VM에 사용할 수 있는 SCO를 제한하는 기본 제공 Azure 정책을 그룹화합니다.
 
 
 ### 연습 2: Azure 리소스를 위임된 관리자로 프로비전하고 프로비저닝 이벤트를 감사하여 위임을 확인합니다
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
 1. Azure VM 배포에 사용할 수 있는 DNS 이름 식별
 
@@ -161,56 +161,56 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 1: Azure VM 배포에 사용할 수 있는 DNS 이름 식별
 
-1. Azure 포털에서 클라우드 셸에서 PowerShell 세션을 시작합니다. 
+1. Azure Portal에서 Cloud Shell에서 PowerShell 세션을 시작합니다. 
 
-   > **참고**: 현재 Azure 구독에서 클라우드 셸을 처음 시작하는 경우 클라우드 셸 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 저장소 계정이 생성됩니다.
+   > **참고**: 현재 Azure 구독에서 Cloud Shell을 처음 시작하는 경우 Cloud Shell 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 스토리지 계정이 생성됩니다.
 
-1. 클라우드 셸 창에서 다음 명령을 실행하여 자리 표시자 및 lt;사용자 지정 레이블> 고유 할 가능성이있는 문자열및 자리 표시자 및 lt;위치 -az1000101-RG> **az1000101-RG** 리소스 그룹을 만든 Azure 지역의 이름으로 표시됩니다.
+1. Cloud Shell 창에서 다음 명령을 실행하여 자리 표시자 및 lt;사용자 지정 레이블> 고유 할 가능성이있는 문자열및 자리 표시자 및 lt;위치 -az1000101-RG> **az1000101-RG** 리소스 그룹을 만든 Azure 지역의 이름으로 표시됩니다.
 
-   ```
+   ```pwsh
    Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000101-RG>'
    ```
 
-1. 명령이 **True**. 그렇지 않은 경우 &lt;custom 레이블>gt의 다른 값으로 동일한 명령을 다시 실행합니다. 명령이 **True** 를 반환할 때까지. 
+1. 명령이 **True**. True가 반환되지 않으면 **True**가 반환될 때까지 다른 값을 사용해 같은 명령을 다시 실행합니다. 
 
 1. 성공적인 결과를 가져온 &lt;custom-label&gt; 가치에 주목하십시오. 다음 작업에 필요합니다
 
-1. 다음 명령을 실행합니다:
+1. 다음 명령을 실행합니다.
 
-   ```
+   ```pwsh
    Register-AzResourceProvider –ProviderNamespace Microsoft.Network
    ```
 
-   ```
+   ```pwsh
    Register-AzResourceProvider –ProviderNamespace Microsoft.Compute
    ```
-참고: 이러한 cmdlet은 Azure 리소스 관리자 Microsoft.Network 및 Microsoft.Compute 리소스 공급자를 등록합니다. Azure Resource Manager 템플릿을 사용하여 이러한 리소스 공급자가 관리하는 리소스를 배포하는 데 필요한 일회성 작업(구독당)입니다(이러한 리소스 공급자가 아직 등록되지 않은 경우).
+참고: 이러한 cmdlet은 Azure Resource Manager Microsoft.Network 및 Microsoft.Compute 리소스 공급자를 등록합니다. Azure Resource Manager 템플릿을 사용하여 이러한 리소스 공급자가 관리하는 리소스를 배포하는 데 필요한 일회성 작업(구독당)입니다(이러한 리소스 공급자가 아직 등록되지 않은 경우).
 
-
+참고 사항: 현재 시간 이전의 시간으로 설정된 토큰 만기를 언급하는 이러한 명령을 실행한 후 오류가 발생하면 Cloud Shell UI에서 전원 단추 아이콘을 클릭하고 Cloud Shell 인스턴스를 재부팅하십시오.  다시 시작되면 이러한 명령을 다시 시도합니다.
 
 #### 작업 2: 위임된 관리자로 비호환 Azure VM의 자동 배포 시도
 
 1. 비공개 모드에서 다른 브라우저 창을 실행합니다.
 
-1. 새 브라우저 창에서 Azure 포털로 이동하 고 이전 연습에서 만든 사용자 계정을 사용 하 여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
+1. 새 브라우저 창에서 Azure Portal로 이동하고 이전 연습에서 만든 사용자 계정을 사용 하 여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
 
-1. Azure 포털에서 **리소스 그룹** 블레이드로 이동하여 리소스 그룹 **az1000101-RG** 만 볼 수 있습니다.
+1. Azure Portal에서 **리소스 그룹** 블레이드로 이동하여 리소스 그룹 **az1000101-RG**만 볼 수 있습니다.
 
-1. Azure 포털에서 **리소스 블레이드 만들기로** 이동합니다. 
+1. Azure Portal에서 **리소스 만들기** 블레이드로 이동합니다. 
 
-1. **리소스 만들기** 블레이드에서 Azure 마켓플레이스에서 **템플릿 배포** 를 검색합니다.
+1. **리소스 만들기** 블레이드를 통해 Azure Marketplace에서 **템플릿 배포**를 검색합니다.
 
 1. 검색 결과 목록을 사용하여 **사용자 지정 템플릿** 블레이드 배포로 이동합니다.
 
-1. **사용자 지정 배포** 블레이드에서 **GitHub 퀵스타트 템플릿 드롭다운 목록 로드** 에서 **101vm-simple-linux** 항목을 선택하고 **편집 템플릿** 블레이드로 이동합니다.
+1. **사용자 지정 배포** 블레이드에서 **GitHub 퀵스타트 템플릿 드롭다운 목록 로드**에서 **101vm-simple-linux** 항목을 선택하고 **편집 템플릿** 블레이드로 이동합니다.
 
-1. **템플릿 블레이드 편집**에서 **변수** 섹션으로 이동하여 **vmSize** 항목을 찾습니다.
+1. **템플릿 블레이드 편집**에서 **변수** 섹션으로 이동하여 **vmSize**항목을 찾습니다.
 
-1. 템플릿은 하드 코딩된 **표준_A1** VM 크기를 사용하고 있습니다.
+1. 템플릿은 하드 코딩된 **Standard_A1** VM 크기를 사용하고 있습니다.
 
-1. 템플릿에 대해 변경한 내용을 삭제하고 **간단한 Ubuntu Linux VM** 블레이드 배포로 이동합니다.
+1. 템플릿에 대해 변경한 내용을 삭제하고 **간단한 Ubuntu Linux VM 배포** 블레이드로 이동합니다.
 
-1. **간단한 Ubuntu Linux VM** 블레이드 배포에서,다음 설정으로 템플릿 배포를 시작:
+1. **간단한 Ubuntu Linux VM 배포** 블레이드에서 다음 설정으로 템플릿 배포를 시작합니다.
 
     - 구독: 이전 연습에서 선택한 구독과 동일합니다
 
@@ -228,16 +228,16 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 위치: 기본값 수락
     
-1. 배포를 다시 실행하지 못합니다. **오류** 블레이드로 이동하여 리소스 배포는 **허용된 가상 머신 SKUs** 정책에서 허용되지 않습니다.   
+1. 배포를 다시 실행하지 못합니다. **오류** 블레이드로 이동하여 리소스 배포는 **허용된 가상 머신 SKUs**정책에서 허용되지 않습니다.   
 
 
 #### 작업 3: 위임된 관리자로 Azure VM을 준수하는 정책의 자동 배포 수행
  
 1. **간단한 Ubuntu Linux VM 배포** 블레이드에서 **편집 템플릿** 블레이드로 이동합니다.
 
-1. **템플릿 블레이드 편집** 에서 **변수** 섹션으로 돌아가 **vmSize** 항목을 찾습니다.
+1. **템플릿 블레이드 편집**에서 **변수** 섹션으로 돌아가 **vmSize**항목을 찾습니다.
 
-1. 값을 **표준_A1값** 을 **표준_DS1_v2** 로 바꾸고변경 값을 저장합니다.
+1. 값 **Standard_A1**을 **Standard_DS1_v2**로 바꾸고 변경 내용을 저장합니다.
 
 1. 배포를 다시 시작합니다. 이 시간 유효성 검사는 성공했습니다. 
 
@@ -248,7 +248,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. 이전 연습에서 사용한 브라우저 창으로 전환합니다.
 
-1. Azure 포털에서 **az1000101-RG** 리소스그룹 블레이드로 이동합니다.
+1. Azure Portal에서 **az1000101-RG** 리소스그룹 블레이드로 이동합니다.
 
 1. **az1000101-RG** 리소스 그룹 블레이드에서 **활동 로그** 블레이드를 표시합니다. 
 
@@ -257,3 +257,31 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 1. 블레이드 보기를 새로 고치고 성공적인 배포를 나타내는 마지막 이벤트를 포함하여 Azure VM 프로비저닝에 해당하는 이벤트를 관찰합니다.
 
 > **결과**: 이 연습을 완료한 후 Azure VM 배포에 사용할 수 있는 DNS 이름을 식별하고, 정책을 비준수하는 Azure VM을 위임된 관리자로 자동 배포하려고 시도했으며, Azure VM을 준수하는 정책의 자동 배포를 수행했습니다. 동일한 위임된 관리자및 두 Azure VM 배포에 해당하는 Azure 활동 로그 항목을 검토했습니다.
+
+## 연습 3: 랩 리소스 제거
+
+#### 작업 1: Cloud Shell 열기
+
+1. 포털 상단에서 **Cloud Shell** 아이콘을 클릭하여 Cloud Shell 창을 엽니다.
+
+1. Cloud Shell 인터페이스에서 **Bash**를 선택합니다.
+
+1. **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 **Enter** 키를 눌러 이 랩에서 만든 모든 리소스 그룹을 나열합니다.
+
+   ```sh
+   az group list --query "[?starts_with(name,'az1000')].name" --output tsv
+   ```
+
+1. 이 랩에서 만든 리소스 그룹만 출력에 포함되어 있는지 확인합니다. 이러한 그룹은 다음 작업에서 삭제됩니다.
+
+#### 작업 2: 리소스 그룹 삭제
+
+1. **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 **Enter** 키를 눌러 이 랩에서 만든 리소스 그룹을 삭제합니다.
+
+   ```sh
+   az group list --query "[?starts_with(name,'az1000')].name" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+   ```
+
+1. 포털 하단에 있는 **Cloud Shell** 프롬프트를 닫습니다.
+
+> **결과**: 이 연습에서는 이 랩에서 사용한 리소스를 제거했습니다.

@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: '디렉터리 동기화 구현'
-    module: '모듈 09 ? Azure Active Directory'
+    module: '모듈 09 - Azure Active Directory'
 ---
 
 # 랩: 디렉터리 동기화 구현

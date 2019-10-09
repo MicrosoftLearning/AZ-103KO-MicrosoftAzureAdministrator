@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: '스토리지 구현 및 관리'
-    module: '모듈 03 ? Azure Storage'
+    module: '모듈 03 - Azure Storage'
 ---
 
 # 랩: 스토리지 구현 및 관리

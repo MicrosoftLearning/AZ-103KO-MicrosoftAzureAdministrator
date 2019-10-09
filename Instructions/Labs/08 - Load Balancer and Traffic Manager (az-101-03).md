@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: '부하 분산 장치 및 Traffic Manager'
-    module: '모듈 08 ? 네트워크 트래픽 관리'
+    module: '모듈 08 - 네트워크 트래픽 관리'
 ---
 
 # 랩: 부하 분산 장치 및 Traffic Manager

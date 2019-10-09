@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: 'Azure 지역 간 Azure Site Recovery'
-    module: '모듈 07 ? 데이터 보호'
+    module: '모듈 07 - 데이터 보호'
 ---
 
 # 랩: Azure 지역 간에 Azure 사이트 복구 구현

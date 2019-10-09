@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: 'Azure DNS 구성'
-    module: '모듈 04 ? 가상 네트워킹'
+    module: '모듈 04 - 가상 네트워킹'
 ---
 
 # 랩: Azure DNS 구성

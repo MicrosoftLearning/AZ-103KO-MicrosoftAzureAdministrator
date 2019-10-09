@@ -230,7 +230,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. RDP 세션 내에서 서버 관리자에서 **adVM**일시적으로** IE 강화 보안 구성**을 사용 하지 않도록 설정 합니다.
 
-1. **adVM**에 대한 RDP 세션 내에서 Internet Explorer를 시작하고 [**https://www.microsoft.com/ko-kr/download/details.aspx?id=47594**](https://www.microsoft.com/ko-kr/download/details.aspx?id=47594)에서 **Azure AD Connect**를 다운로드합니다.
+1. **adVM** 에 대한 RDP 세션 내에서 Internet Explorer를 시작하고 [**https://www.microsoft.com/ko-kr/download/details.aspx?id=47594**](https://www.microsoft.com/ko-kr/download/details.aspx?id=47594)에서 **Azure AD Connect**를 다운로드합니다.
 
 1. **Microsoft Azure Active Directory Connect **마법사를 시작하고 라이선스 조건을 수락한 다음 **익스프레스 설정** 페이지에서 **사용자 지정**옵션을 선택합니다.
 

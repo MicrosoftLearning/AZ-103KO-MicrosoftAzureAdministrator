@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: ‘셀프 서비스 암호 재설정’
+    title: '셀프 서비스 암호 재설정'
     module: '모듈 10 - ID 보안'
 ---
 
@@ -49,7 +49,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
 1. Azure Portal에서 **새로 만들기** 블레이드로 이동합니다. 
 
-1. **새로 만들기** 블레이드를 통해 Azure Marketplace에서 **Azure Active Directory**를 검색하십시오.
+1. **새로 만들기** 블레이드를 통해 Azure Marketplace에서 **Azure Active Directory** 를 검색하십시오.
 
 1. 검색 결과 목록을 사용하여 **디렉터리 만들기** 블레이드로 이동합니다.
 
@@ -89,7 +89,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
     - 이름: **aaduser1**
 
-    - 사용자 이름: **aaduser1@&lt;DNS 도메인 이름&gt;.**onmicrosoft.com &lt;DNS 도메인 이름>이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
+    - 사용자 이름: **aaduser1@&lt;DNS 도메인 이름&gt;.onmicrosoft.com** &lt;DNS 도메인 이름>이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
 
    > **참고**: 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 

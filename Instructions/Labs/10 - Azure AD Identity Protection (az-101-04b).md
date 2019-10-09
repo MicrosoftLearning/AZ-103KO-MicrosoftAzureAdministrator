@@ -107,7 +107,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. Azure Portal에서 **새로 만들기** 블레이드로 이동합니다. 
 
-1. **새로 만들기** 블레이드를 통해 Azure Marketplace에서 **Azure Active Directory**를 검색하십시오.
+1. **새로 만들기** 블레이드를 통해 Azure Marketplace에서 **Azure Active Directory** 를 검색하십시오.
 
 1. 검색 결과 목록을 사용하여 **디렉터리 만들기** 블레이드로 이동합니다.
 

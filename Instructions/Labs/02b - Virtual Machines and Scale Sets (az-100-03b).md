@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: '가상 머신 및 확장 집합'
-    module: '모듈 02 - Azure Virtual Machines'
+    module: '모듈 02 - Azure 가상 시스템'
 ---
 
 # 랩: 가상 머신 및 확장 집합

@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: 'Azure 파일 동기화'
-    module: '모듈 12 – Data Services'
+    module: '모듈 12 – 데이터 서비스'
 ---
 
 # 랩: Azure 파일 동기화 구현

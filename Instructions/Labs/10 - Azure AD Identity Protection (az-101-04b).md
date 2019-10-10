@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: 'Azure AD ID 보호'
-    module: '모듈 10 - ID 보안'
+    module: '모듈 10 - 보안 신원'
 ---
 
 # 랩: Azure AD ID 보호

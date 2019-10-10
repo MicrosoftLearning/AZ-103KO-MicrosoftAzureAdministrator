@@ -1,7 +1,7 @@
 ﻿---
 lab:
     title: '가상 머신 배포 및 관리'
-    module: '모듈 01 - Azure Virtual Machines'
+    module: '모듈 01 - Azure 관리'
 ---
 
 # 랩: 가상 머신 배포 및 관리

@@ -130,7 +130,7 @@ Adatum Corporation은 Azure Network Watcher를 사용하여 Azure 가상 네트�
 
 1. **사용자 지정 배포** 블레이드에서 **매개 변수 편집** 블레이드로 이동합니다.
 
-1. 편집 **파라미터 변수 ** 블레이드에서 매개 변수 파일 **az-101-03b_02_azuredeploy.parameters.json**을 로드합니다. 
+1. 편집 **파라미터 변수** 블레이드에서 매개 변수 파일 **az-101-03b_02_azuredeploy.parameters.json**을 로드합니다. 
 
 1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -168,7 +168,7 @@ Adatum Corporation은 Azure Network Watcher를 사용하여 Azure 가상 네트�
 
    > **참고**: 이 작업을 시작하기 전에 이 연습의 첫 번째 작업에서 시작한 템플릿 배포가 완료되었는지 확인합니다. 
 
-1. Azure Portal에서 **az1010301b-vnet1 **가상 네트워크 블레이드로 이동합니다.
+1. Azure Portal에서 **az1010301b-vnet1** 가상 네트워크 블레이드로 이동합니다.
 
 1. **az1010301b-vnet1** 가상 네트워크 블레이드에서 **az1010301b-vnet1 - 피어링** 블레이드를 표시합니다.
 
@@ -194,7 +194,7 @@ Adatum Corporation은 Azure Network Watcher를 사용하여 Azure 가상 네트�
 
 #### 작업 4: Azure Storage 계정 및 Azure SQL Database 인스턴스에 서비스 엔드포인트를 설정합니다.
 
-1. Azure Portal에서 **az1010301b-vnet1 **가상 네트워크 블레이드로 이동합니다.
+1. Azure Portal에서 **az1010301b-vnet1** 가상 네트워크 블레이드로 이동합니다.
 
 1. **az1010301b-vnet1** 가상 네트워크 블레이드에서 **서비스 엔드포인트** 블레이드를 표시합니다.
 
@@ -210,7 +210,7 @@ Adatum Corporation은 Azure Network Watcher를 사용하여 Azure 가상 네트�
 
     - 서브넷: **서브넷0**
 
-1. Azure Portal에서 **az1010301b-RG **리소스그룹 블레이드로 이동합니다.
+1. Azure Portal에서 **az1010301b-RG** 리소스그룹 블레이드로 이동합니다.
 
 1. **az1010301b-RG** 리소스 그룹 블레이드에서 리소스 그룹에 포함된 스토리지 계정의 블레이드로 이동합니다. 
 
@@ -238,7 +238,7 @@ Adatum Corporation은 Azure Network Watcher를 사용하여 Azure 가상 네트�
 
         - 모든 네트워크에서 스토리지 메트릭에 대한 읽기 액세스 허용: **비활성화**
 
-1. Azure Portal에서 **az1010301b-RG **리소스그룹 블레이드로 이동합니다.
+1. Azure Portal에서 **az1010301b-RG** 리소스그룹 블레이드로 이동합니다.
 
 1. **az1010301b-RG** 리소스 그룹 블레이드에서 **az1010301b** Azure SQL Server 블레이드로 이동합니다. 
 

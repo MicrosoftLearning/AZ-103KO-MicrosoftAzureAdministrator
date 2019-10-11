@@ -137,9 +137,9 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **AdatumSync - 개요** 블레이드에서 **AdatumSync - 사용자지정 도메인 이름** 블레이드를 표시합니다. 
 
-1. **AdatumSync - 사용자 지정 도메인 이름 **블레이드에서Azure AD 테넌트와 연결된 기본 기본 DNS 도메인 이름을 식별합니다. 그 가치에 주목하십시오 - 당신은 다음 과제에서 그것을 필요로 할 것입니다.
+1. **AdatumSync - 사용자 지정 도메인 이름** 블레이드에서Azure AD 테넌트와 연결된 기본 기본 DNS 도메인 이름을 식별합니다. 그 가치에 주목하십시오 - 당신은 다음 과제에서 그것을 필요로 할 것입니다.
 
-1. **AdatumSync에서 사용자 지정 도메인 이름** 블레이드에서** adatum.com** 사용자 지정 도메인을 추가합니다.
+1. **AdatumSync에서 사용자 지정 도메인 이름** 블레이드에서 **adatum.com** 사용자 지정 도메인을 추가합니다.
 
 1. **adatum.com**Azure에서 Azure AD 도메인 이름 확인을 수행하는 데 필요한 정보를 검토합니다.
 
@@ -154,7 +154,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
     - 이름: **동기화**관리자
 
-    - 사용자 이름: **syncadmin@***<DNS-domain-name>* 여기서 *<DNS-domain-name>*은 이전 작업에서 식별한 기본적인 기본 DNS 도메인 이름을 나타냅니다. 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
+    - 사용자 이름: **syncadmin@** *<DNS-domain-name>* 여기서 *<DNS-domain-name>* 은 이전 작업에서 식별한 기본적인 기본 DNS 도메인 이름을 나타냅니다. 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 
     - 프로필: **구성되지 않음**
 
@@ -228,19 +228,19 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 #### 작업 2: Azure AD Connect 설치
 
-1. RDP 세션 내에서 서버 관리자에서 **adVM**일시적으로** IE 강화 보안 구성**을 사용 하지 않도록 설정 합니다.
+1. RDP 세션 내에서 서버 관리자에서 **adVM**일시적으로 **IE 강화 보안 구성**을 사용 하지 않도록 설정 합니다.
 
 1. **adVM** 에 대한 RDP 세션 내에서 Internet Explorer를 시작하고 [**https://www.microsoft.com/ko-kr/download/details.aspx?id=47594**](https://www.microsoft.com/ko-kr/download/details.aspx?id=47594)에서 **Azure AD Connect**를 다운로드합니다.
 
-1. **Microsoft Azure Active Directory Connect **마법사를 시작하고 라이선스 조건을 수락한 다음 **익스프레스 설정** 페이지에서 **사용자 지정**옵션을 선택합니다.
+1. **Microsoft Azure Active Directory Connect** 마법사를 시작하고 라이선스 조건을 수락한 다음 **익스프레스 설정** 페이지에서 **사용자 지정** 옵션을 선택합니다.
 
 1. 필요한 **구성 요소 설치**페이지에서 모든 선택적 구성 옵션을 선택 취소하고 설치를 시작합니다.
 
 1. **사용자 로그인** 페이지에서 **암호 해시 동기화**만 사용하도록 설정되어 있는지 확인합니다.
 
-1. Azure AD에 연결하라는 메시지가 표시되면 이전 연습에서 만든 **syncadmin **계정의 자격 증명을 사용하여 인증합니다.
+1. Azure AD에 연결하라는 메시지가 표시되면 이전 연습에서 만든 **syncadmin** 계정의 자격 증명을 사용하여 인증합니다.
 
-1. 디렉터리 연결하라는 메시지가 표시되면 **adatum.com **포리스트를 추가하고 **새 AD 계정 만들기** 옵션을 선택하고 다음 자격 증명을 사용하여 인증합니다.
+1. 디렉터리 연결하라는 메시지가 표시되면 **adatum.com** 포리스트를 추가하고 **새 AD 계정 만들기** 옵션을 선택하고 다음 자격 증명을 사용하여 인증합니다.
 
     - 사용자 이름: **ADATUM\\학생**
 
@@ -258,7 +258,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **선택적 기능**페이지에서 기본 설정을 수락합니다.
 
-1. **구성 준비** 페이지에서 구성이 완료될 때 **동기화 시작 프로세스가 **선택되어 설치 프로세스를 계속해야 합니다. 
+1. **구성 준비** 페이지에서 구성이 완료될 때 **동기화 시작 프로세스가** 선택되어 설치 프로세스를 계속해야 합니다. 
 
    > **참고**: 설치에는 약 2 분이 소요됩니다.
 
@@ -267,7 +267,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 #### 작업 3: 디렉터리 동기화 확인
 
-1. RDP 세션 내에서 **adVM**을시작하고, Internet Explorer를 시작하고, http://portal.azure.com**에서 Azure Portal을 찾아보고 [**이전](http://portal.azure.com) 연습에서 만든 **syncadmin **계정을 사용하여 로그인합니다. 
+1. RDP 세션 내에서 **adVM**을시작하고, Internet Explorer를 시작하고,에서 Azure Portal을 찾아보고 이전 [**http://portal.azure.com**](http://portal.azure.com) 연습에서 만든 **syncadmin** 계정을 사용하여 로그인합니다. 
 
 1. Azure Portal에서 **AdatumSync - 개요** 블레이드로 이동합니다.
 

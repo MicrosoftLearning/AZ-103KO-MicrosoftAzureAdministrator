@@ -145,7 +145,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
    > **참고**: 이 작업을 시작하기 전에 연습 0에서 시작한 템플릿 배포가 완료되었는지 확인합니다. 
 
-1. Azure Portal에서 **az1000201b-vm1 **블레이드로 이동합니다.
+1. Azure Portal에서 **az1000201b-vm1** 블레이드로 이동합니다.
 
 1. **az1000201b-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 
@@ -153,7 +153,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
     - 관리자 암호: **Pa55w.rd1234**
 
-1. 서버 관리자에서 Azure VM에 대한 RDP 세션 내에서** 파일 및 저장소 서비스**로 이동하여 Azure VM에 연결된 데이터 디스크를 찾고, **GPT** 디스크로 초기화하고, **새 볼륨 마법사**를 사용하여 전체 디스크를 차지하는 단일 볼륨을 다음 설정으로 만듭니다.
+1. 서버 관리자에서 Azure VM에 대한 RDP 세션 내에서 **파일 및 저장소 서비스** 로 이동하여 Azure VM에 연결된 데이터 디스크를 찾고, **GPT** 디스크로 초기화하고, **새 볼륨 마법사** 를 사용하여 전체 디스크를 차지하는 단일 볼륨을 다음 설정으로 만듭니다.
 
     - 드라이브 레터: **S**
 
@@ -238,7 +238,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. Azure VM에 대한 RDP 세션 내에서, 관리자에서 로컬 서버 보기로 이동하여 일시적으로 **IE 고급 보안 구성**을 끕니다.
 
-1. Azure VM에 대한 RDP 세션 내에서, Internet Explorer를 시작하고 ** [http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 탐색하고 이 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
+1. Azure VM에 대한 RDP 세션 내에서, Internet Explorer를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 탐색하고 이 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure Portal에서 **새로 만들기** 블레이드로 이동합니다.
 
@@ -325,13 +325,13 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. **az10002bshare1** 블레이드에서 **연결**을 클릭합니다.
 
-1. 연결 블레이드에서 Windows 컴퓨터의 ****파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
+1. **연결** 블레이드에서 Windows 컴퓨터의 파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
 
 1. RDP 세션 내에서 Windows PowerShell ISE 세션을 시작합니다. 
 
 1. Windows PowerShell ISE 세션에서 스크립트 창을 열고 로컬 클립보드의 내용을 붙여넣습니다.
 
-1. 'New-PSDrive' cmdlet이 포함된 줄 끝에 '-Persist' 스위치를 추가합니다.
+1. `New-PSDrive` cmdlet이 포함된 줄 끝에 `-Persist` 스위치를 추가합니다.
 
 1. 스크립트를 실행하고 출력이 Z: 드라이브를 Azure Storage File Service 공유로 성공적으로 매핑했는지 확인합니다.
 

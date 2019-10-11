@@ -87,7 +87,7 @@ Adatum Corporation은 자체 DNS 서버를 배포하지 않고도 Azure에서 �
    New-AzPublicIpAddress -ResourceGroupName $rg.ResourceGroupName -Sku Basic -AllocationMethod Static -Name az1000401b-pip -Location $rg.Location
    ```
 
-1. Azure Portal에서 **az1000401b-RG **리소스그룹 블레이드로 이동합니다.
+1. Azure Portal에서 **az1000401b-RG** 리소스그룹 블레이드로 이동합니다.
 
 1. **az1000401b-RG** 리소스 그룹 블레이드에서새로 생성된 공용 DNS 영역을 표시하는 블레이드로 이동합니다.
 
@@ -219,7 +219,7 @@ Adatum Corporation은 자체 DNS 서버를 배포하지 않고도 Azure에서 �
    New-AzResourceGroupDeployment -ResourceGroupName $rg2.ResourceGroupName -TemplateFile "./az-100-04b_02_azuredeploy.json" -TemplateParameterFile "./az-100-04_azuredeploy.parameters.json" -AsJob
    ```
 
-   > **참고**: 다음 작업을 진행하기 전에 두 배포가 모두 완료될 때까지 기다립니다. Cloud Shell 창에서 'Get-Job' cmdlet을 실행하여 작업 상태를 식별할 수 있습니다.
+   > **참고**: 다음 작업을 진행하기 전에 두 배포가 모두 완료될 때까지 기다립니다. Cloud Shell 창에서 `Get-Job` cmdlet을 실행하여 작업 상태를 식별할 수 있습니다.
 
 
 #### 작업 4: 개인 도메인에 대한 Azure DNS 기반 이름 예약 및 해결 방법의 유효성 검사

@@ -57,7 +57,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. **사용자 지정 배포** 블레이드에서 **매개 변수 편집** 블레이드로 이동합니다.
 
-1. 편집 **파라미터 변수 ** 블레이드에서 매개 변수 파일 ** az-101-04b_azuredeploy.parameters.json**을 로드합니다. 
+1. 편집 **파라미터 변수** 블레이드에서 매개 변수 파일 **az-101-04b_azuredeploy.parameters.json** 을 로드합니다. 
 
 1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -128,9 +128,9 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
    > **참고**: **디렉터리 + 구독** 필터는 Azure Portal의 도구 모음에서 Cloud Shell 아이콘의 오른쪽에 나타납니다. 
 
-   > **참고**: **AdatumLab101-4b **항목이 **디렉터리 + 구독** 필터 목록에 나타나지 않으면 브라우저 창을 새로 고쳐야 할 수 있습니다.
+   > **참고**: **AdatumLab101-4b** 항목이 **디렉터리 + 구독** 필터 목록에 나타나지 않으면 브라우저 창을 새로 고쳐야 할 수 있습니다.
 
-1. Azure Portal에서 **AdatumLab101-4b - 개요**블레이드로 이동합니다.
+1. Azure Portal에서 **AdatumLab101-4b - 개요** 블레이드로 이동합니다.
 
 1. **AdatumLab101-4b - 개요** 블레이드에서 **라이선스 - 개요** 블레이드로 이동합니다.
 
@@ -147,7 +147,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
     - 이름: **aaduser1**
 
-    - 사용자 이름: **aaduser1@&lt;DNS 도메인 이름&gt;.**onmicrosoft.com &lt;DNS 도메인 이름>이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
+    - 사용자 이름: **aaduser2@&lt;DNS-domain-name&gt;.onmicrosoft.com** &lt;DNS-domain-name&gt; 이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
 
    > **참고**: 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 
@@ -205,7 +205,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. Azure Portal에서 AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
 
-1. AdatumLab101-4b Azure AD 테넌트의 **사용자-모든 사용자** 블레이드는** 다단계 인증** 링크를 사용하여 ** 다단계 인증**포털을 엽니다. 
+1. AdatumLab101-4b Azure AD 테넌트의 **사용자-모든 사용자** 블레이드는 **다단계 인증** 링크를 사용하여 **다단계 인증** 포털을 엽니다. 
 
 1. **다단계 인증** 포털에서 **서비스 설정** 탭을 표시하고, 관련 설정을 검토하고, **휴대폰에 문자 메시지 전송**, **모바일 앱을 통한 알림**, **모바일 앱을 통한 인증 코드 또는 하드웨어 토큰**을 포함한 **확인 옵션**이 사용하도록 설정되어 있습니다.
 
@@ -215,7 +215,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
    > **참고**: 사용자 상태를 사용 상태에서 적용됨 상태로 변경하면 Azure MFA를 지원하지 않는 레거시 Azure AD 통합 앱에만 영향을 미치며, 상태가 적용됨으로 변경된 후에는 앱 암호를 사용해야 합니다.
 
-1. **aaduser1 항목을 선택한 다단계 인증 포털에서**** 사용자 관리 설정 **창을 표시하고 ****다음을 포함한 옵션을 검토합니다.
+1. **aaduser1** 항목을 선택한 다단계 인증 포털에서 **사용자 관리 설정** 창을 표시하고 **다음을 포함한 옵션을** 검토합니다.
 
     - 선택한 사용자가 연락처 방법을 다시 제공하도록 요구합니다.
 
@@ -227,9 +227,9 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. AdatumLab101-4b Azure AD 테넌트의 **사용자-모든 사용자** 블레이드를 **AdatumLab101-4b - 개요** 블레이드로 이동합니다.
 
-1. **AdatumLab101-4b에서 개요** 블레이드에서 **AdatumLab101-4b-MFA**블레이드로 이동합니다.
+1. **AdatumLab101-4b에서 개요** 블레이드에서 **AdatumLab101-4b-MFA** 블레이드로 이동합니다.
 
-1. **AdatumLab101-4b - MFA 블레이드**에서 **다단계 인증 - 사기 경고** 블레이드로 이동하여 다음 설정을 구성합니다.
+1. **AdatumLab101-4b - MFA 블레이드** 에서 **다단계 인증 - 사기 경고** 블레이드로 이동하여 다음 설정을 구성합니다.
 
     - 사용자가 사기 경고를 제출할 수 있도록 허용: **켜기**
 
@@ -284,20 +284,20 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
    > **참고**: **AdatumLab101-4b**Azure AD 테넌트에 로그인되어 있는지 확인합니다. **디렉터리 + 구독** 필터를 사용하여 Azure AD 테넌트 간에 전환할 수 있습니다. 
 
-1. Azure Portal에서 **새로 만들기 **블레이드로 이동합니다.
+1. Azure Portal에서 **새로 만들기** 블레이드로 이동합니다.
 
 1. **새로 만들기** 블레이드를 통해 Azure Marketplace에서 **Azure AD ID 보호**를 검색합니다.
 
-1. 검색 결과 목록에서 **Azure AD ID 보호**를 선택하고 **AdatumLab101-4b**Azure AD 테넌트와 연결된 ** Azure AD ID 보호**의 인스턴스를 만듭니다.
+1. 검색 결과 목록에서 **Azure AD ID 보호**를 선택하고 **AdatumLab101-4b** Azure AD 테넌트와 연결된 **Azure AD ID 보호** 의 인스턴스를 만듭니다.
 
-1. Azure Portal에서 **모든 서비스** 블레이드로 이동 한 다음 검색 필터를 사용하여** Azure AD ID 보호** 블레이드를 표시합니다.
+1. Azure Portal에서 **모든 서비스** 블레이드로 이동 한 다음 검색 필터를 사용하여 **Azure AD ID 보호** 블레이드를 표시합니다.
 
 
 #### 작업 2: 사용자 위험 정책 구성
 
 1. **Azure AD ID 보호** 블레이드에서 Azure **AD ID 보호- 사용자 위험 정책** 블레이드로 이동
 
-1. Azure **AD ID 보호 - 사용자 위험 정책 **블레이드에서 다음 설정으로 **사용자 위험 해결 정책**을 구성합니다.
+1. Azure **AD ID 보호 - 사용자 위험 정책** 블레이드에서 다음 설정으로 **사용자 위험 해결 정책** 을 구성합니다.
 
     - 과제: 
 
@@ -345,7 +345,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. Azure Portal에서 **디렉터리 + 구독** 필터를 기본 Azure AD 테넌트에 설정합니다.
 
-1. Azure Portal에서 **az1010401b-vm1 **블레이드로 이동합니다.
+1. Azure Portal에서 **az1010401b-vm1** 블레이드로 이동합니다.
 
 1. **az1010401b-vm1** 블레이드에서원격 데스크톱 세션을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 
@@ -359,15 +359,15 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. 원격 데스크톱 세션 내에서 InPrivate 인터넷 탐색기 창을 엽니다.
 
-1. 새 브라우저 창에서 [**https://www.torproject.org/projects/torbrowser.html.en**](https://www.torproject.org/projects/torbrowser.html.en)에서 ToR 브라우저 프로젝트로 이동하여 ToR 브라우저를 다운로드하고 기본 옵션으로 설치합니다.
+1. 새 브라우저 창에서 [**https://www.torproject.org/projects/torbrowser.html.en**](https://www.torproject.org/projects/torbrowser.html.en) 에서 ToR 브라우저 프로젝트로 이동하여 ToR 브라우저를 다운로드하고 기본 옵션으로 설치합니다.
 
-1. 설치가 완료되면 ToR 브라우저를 시작하고 초기 페이지에서 **연결** 옵션을 사용하고 [**https://myapps.microsoft.com**](https://myapps.microsoft.com)에서응용 프로그램 액세스 패널로 이동합니다.
+1. 설치가 완료되면 ToR 브라우저를 시작하고 초기 페이지에서 **연결** 옵션을 사용하고 [**https://myapps.microsoft.com**](https://myapps.microsoft.com) 에서응용 프로그램 액세스 패널로 이동합니다.
 
 1. 메시지가 표시되면 이전 연습에서 만든 **aaduser2**계정으로 로그인합니다.
 
 1. **로그인이 차단되었다는**메시지가 표시됩니다. 이 계정은 ToR 브라우저 사용과 관련된 로그인 위험이 증가하여 필요한 다중 요소 인증으로 구성되지 않았기 때문에 이 문제가 예상됩니다.
 
-1. **로그아웃을 사용하고 다른 계정 옵션으로 로그인하여** 이전 연습에서 다단계 인증을 위해 만들고 구성한** aaduser1** 계정으로 로그인합니다.
+1. **로그아웃을 사용하고 다른 계정 옵션으로 로그인하여** 이전 연습에서 다단계 인증을 위해 만들고 구성한 **aaduser1** 계정으로 로그인합니다.
 
 1. 이번에는 **의심스러운 활동 감지 메시지가 표시됩니다.** 이 계정은 다중 요소 인증으로 구성되므로 다시 한 번 이 문제가 예상됩니다. ToR 브라우저 사용과 관련된 로그인 위험이 증가하는 것을 고려하면 이전 작업에서 구성한 로그인 위험 정책에 따라 다단계 인증을 사용해야 합니다.
 
@@ -377,7 +377,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. **aaduser1**로 로그아웃하고ToR 브라우저 창을 닫습니다.
 
-1. Internet Explorer를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 **AdatumLab101-4b Azure** AD 테넌트를 만드는 데 사용한 Microsoft 계정을 사용하여 로그인합니다. 
+1. Internet Explorer를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 찾아보고 **AdatumLab101-4b Azure** AD 테넌트를 만드는 데 사용한 Microsoft 계정을 사용하여 로그인합니다. 
 
 1. Azure Portal에서 **Azure AD ID 보호 - 위험 이벤트** 블레이드로 이동하여 **익명 IP 주소에서 로그인**을 나타내는 항목이 있음을 확인합니다.
 

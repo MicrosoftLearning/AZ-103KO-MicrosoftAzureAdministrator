@@ -40,7 +40,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 1: Azure AD 사용자 및 그룹 만들기
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 ** [http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의.
 
 1. Azure Portal에서 **Azure Active Directory** 블레이드로 이동합니다 
 

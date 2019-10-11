@@ -44,7 +44,7 @@ Adatum Corporation은 Azure 구독에서 Azure 가상 네트워크 간의 서비
 
 #### 작업 1: Azure Resource Manager 템플릿을 사용하여 두 개의 Azure VM을 호스팅하는 첫 번째 가상 네트워크 만들기
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [** http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure Portal에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -193,7 +193,7 @@ Adatum Corporation은 Azure 구독에서 Azure 가상 네트워크 간의 서비
 
 1. **az1000401-vm2 - 네트워킹** 블레이드에서 Azure VM의 네트워크 어댑터(**az1000401-nic2**)의 블레이드를 표시합니다.
 
-1. **az1000401-nic2** 블레이드에서** IP 구성** 블레이드를 표시합니다.
+1. **az1000401-nic2** 블레이드에서 **IP 구성** 블레이드를 표시합니다.
 
 1. **az1000401-nic2 - IP 구성**에서 IP 전달을 **사용**으로 설정한 다음 **저장**을 클릭합니다.
 

@@ -107,7 +107,7 @@ Adatum Corporation은 Azure VM 및 Azure VM Scale Sets에서 실행되는 워크
 
 1. **사용자 지정 배포** 블레이드에서 **매개 변수 편집** 블레이드로 이동합니다.
 
-1. 편집 **파라미터 변수 ** 블레이드에서 매개 변수 파일 **az-100-03b_02_azuredeploy.parameters.json**을 로드합니다. 
+1. 편집 **파라미터 변수** 블레이드에서 매개 변수 파일 **az-100-03b_02_azuredeploy.parameters.json** 을 로드합니다. 
 
 1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -176,9 +176,9 @@ Adatum Corporation은 Azure VM 및 Azure VM Scale Sets에서 실행되는 워크
 
 1. **매개 변수 편집** 블레이드에서 가장 최근의 성공적인배포에 사용된 원래 매개 변수의 값을 검토합니다. 
 
-   > **참고**: 해당 매개 변수에** securestring** 데이터 형식이 있기 때문에 **adminPassword** 매개 변수의 값은 null입니다. 
+   > **참고**: 해당 매개 변수에 **securestring** 데이터 형식이 있기 때문에 **adminPassword** 매개 변수의 값은 null입니다. 
 
-1. 매개 변수를 저장하고 **사용자 지정 배포 **블레이드로 돌아갑니다. 
+1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
 1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿 배포를 시작합니다.
 
@@ -249,7 +249,7 @@ Adatum Corporation은 Azure VM 및 Azure VM Scale Sets에서 실행되는 워크
 
 #### 작업 4: Azure VM 내에서 데이터 볼륨 구성
 
-1. Azure Portal에서 **az1000301b-vm1 **블레이드로 이동합니다.
+1. Azure Portal에서 **az1000301b-vm1** 블레이드로 이동합니다.
 
 1. **az1000301b-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 

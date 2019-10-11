@@ -320,7 +320,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. **연결** 블레이드에서 Windows 컴퓨터의 파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
 
-1. Azure Portal에서 **az1000201-vm1 **블레이드로 이동합니다.
+1. Azure Portal에서 **az1000201-vm1** 블레이드로 이동합니다.
 
 1. **az1000201-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 

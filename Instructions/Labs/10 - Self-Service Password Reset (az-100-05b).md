@@ -45,7 +45,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
 #### 작업 1: 새 Azure AD 테넌트 만들기
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [** http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure Portal에서 **새로 만들기** 블레이드로 이동합니다. 
 
@@ -179,7 +179,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
     - 동적 사용자 구성원: 
 
-        - 고급 규칙: **(user.department -eq "판매") -또는 (user.department -eq "재무")**
+        - 고급 규칙: **(user.department -eq "Sales") -또는 (user.department -eq "Finance")**
 
 1. **그룹에서 - 모든 그룹** 블레이드, **판매** 및 **판매 및 재무 그룹**의 블레이드로 이동, 그룹 구성원 평가가 진행 중임을 유의하십시오. 회피가 완료될 때까지 기다린 다음 **멤버** 블레이드로 이동하여 그룹 구성원이 올바른지 확인합니다.
 

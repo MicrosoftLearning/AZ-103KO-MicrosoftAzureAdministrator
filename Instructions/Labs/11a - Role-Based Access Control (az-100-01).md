@@ -52,7 +52,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 이름: **aaduser100011**
 
-    - 사용자 이름: **aaduser100011@&DNS 도메인 이름>** 여기서 &lt;DNS 도메인 이름&gt;이 작업에서 앞에서 식별한 기본 DNS 도메인 이름을 나타냅니다.
+    - 사용자 이름: **aaduser100011@&lt;DNS-domain-name&gt;** 여기서 &lt;DNS-domain-name&gt;이 작업에서 앞에서 식별한 기본 DNS 도메인 이름을 나타냅니다.
 
     - 프로필: **구성되지 않음**
 
@@ -165,7 +165,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
    > **참고**: 현재 Azure 구독에서 Cloud Shell을 처음 시작하는 경우 Cloud Shell 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 스토리지 계정이 생성됩니다.
 
-1. Cloud Shell 창에서 다음 명령을 실행하여 자리 표시자 및 lt;사용자 지정 레이블> 고유 할 가능성이있는 문자열및 자리 표시자 및 lt;위치 -az1000101-RG> **az1000101-RG** 리소스 그룹을 만든 Azure 지역의 이름으로 표시됩니다.
+1. Cloud Shell 창에서 다음 명령을 실행하여 자리 표시자 및 &lt;custom-label&gt; 고유 할 가능성이있는 문자열및 자리 표시자 및 &lt;location-of-az1000101-RG&gt; **az1000101-RG** 리소스 그룹을 만든 Azure 지역의 이름으로 표시됩니다.
 
    ```pwsh
    Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000101-RG>'

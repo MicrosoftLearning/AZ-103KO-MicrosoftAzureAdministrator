@@ -89,7 +89,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
     - 이름: **aaduser1**
 
-    - 사용자 이름: **aaduser1@&lt;DNS 도메인 이름&gt;.onmicrosoft.com** &lt;DNS 도메인 이름>이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
+    - 사용자 이름: **aaduser1@&lt;DNS-domain-name&gt;.onmicrosoft.com** 여기서 &lt;DNS-domain-name&gt; 이 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
 
    > **참고**: 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 
@@ -109,7 +109,7 @@ Adatum 공사는 Azure AD 프리미엄 기능을 활용하기 원합니다
 
     - 이름: **aaduser2**
 
-    - 사용자 이름: **aaduser2@&lt;DNS-domain-name&gt;.onmicrosoft.com** &lt;DNS-domain-name&gt; 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
+    - 사용자 이름: **aaduser2@&lt;DNS-domain-name&gt;.onmicrosoft.com** 여기서 &lt;DNS-domain-name&gt; 연습의 첫 번째 작업에서 지정한 초기 도메인 이름을 나타냅니다. 
 
    > **참고**: 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 

@@ -185,7 +185,7 @@ Adatum Corporation은 Azure Virtual Machines(VM) 및 Azure VM 스케일 집합�
 1. Cloud Shell 창에서 다음 명령을 실행합니다.
 
    ```pwsh
-   vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $availabilitySet.Id
+   $vmConfig = New-AzVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $availabilitySet.Id
    Add-AzVMNetworkInterface -VM $vmConfig -Id $nic.Id
    Set-AzVMOperatingSystem -VM $vmConfig -Windows -ComputerName $vmName -Credential $adminCreds 
    Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version 'latest'
@@ -246,7 +246,7 @@ Adatum Corporation은 Azure Virtual Machines(VM) 및 Azure VM 스케일 집합�
 
     - 관리자 암호: **Pa55w.rd1234**
 
-    - 가상 네트워크 이름: **az1000301-RG-vnet**_(템플릿 기본값에서 이 값을 변경) _
+    - 가상 네트워크 이름: **az1000301-RG-vnet** _(템플릿 기본값에서 이 값을 변경)_
 
     - 이미지 게시자: **정식**
 
@@ -372,7 +372,7 @@ Adatum Corporation은 Azure Virtual Machines(VM) 및 Azure VM 스케일 집합�
  
 1. 성공적으로 인증되면 RDP 세션을 **az1000301-vm0**로 종료합니다.
 
-1. 랩 가상 머신에서 Azure Portal에서 **az1000302-vm0 **블레이드로 이동합니다.
+1. 랩 가상 머신에서 Azure Portal에서 **az1000302-vm0** 블레이드로 이동합니다.
 
 1. **az1000302-vm0** 블레이드에서 **네트워킹** 블레이드로 이동합니다.
 
@@ -471,7 +471,7 @@ Adatum Corporation은 Azure Virtual Machines(VM) 및 Azure VM 스케일 집합�
 
 1. **az1000303vms0** 블레이드에서확장 블레이드를 표시합니다.
 
-1. **az1000303vms0 - 확장** 블레이드에서 다음설정으로** PowerShell 원하는 상태 구성 확장**을 추가합니다.
+1. **az1000303vms0 - 확장** 블레이드에서 다음설정으로 **PowerShell 원하는 상태 구성 확장** 을 추가합니다.
 
    > **참고**: DSC 구성 모듈은 **Labfiles\\Module_02\\Deploy_and_Manage_Virtual_Machines\\az-100-03_install_iis_vmss.zip**에서 업로드할 수 있습니다. 이 모듈에는 IIS(웹 서버) 역할을 설치하는 DSC 구성 스크립트가 포함되어 있습니다.
 

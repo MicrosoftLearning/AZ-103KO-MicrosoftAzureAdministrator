@@ -154,7 +154,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
     - 이름: **동기화**관리자
 
-    - 사용자 이름: **syncadmin@** *<DNS-domain-name>* 여기서 *<DNS-domain-name>* 은 이전 작업에서 식별한 기본적인 기본 DNS 도메인 이름을 나타냅니다. 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
+    - 사용자 이름: **syncadmin@<DNS-domain-name>** 여기서 <DNS-domain-name> 은 이전 작업에서 식별한 기본적인 기본 DNS 도메인 이름을 나타냅니다. 이 사용자 이름을 기록해 둡니다. 이 실험실에서 나중에 필요할 것입니다.
 
     - 프로필: **구성되지 않음**
 

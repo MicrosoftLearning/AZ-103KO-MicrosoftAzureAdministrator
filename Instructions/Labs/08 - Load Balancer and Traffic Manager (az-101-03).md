@@ -524,7 +524,7 @@ Adatum Corporation은 Azure VM 호스팅 웹 워크로드를 구현하고 Azure 
 
 1. **az1010301w-lb**블레이드에서 부하 분산 장치 프런트 엔드에 할당된 공용 IP 주소를 식별합니다.
 
-1. 랩 가상 컴퓨터에서 &lt;az1010301w-lb_public_IP&amp;자리 표시자를 이전 작업에서 식별한 IP 주소로 대체한 후 다음 명령을 실행합니다.
+1. 랩 가상 컴퓨터에서 &lt;az1010301w-lb_public_IP&gt; 자리 표시자를 이전 작업에서 식별한 IP 주소로 대체한 후 다음 명령을 실행합니다.
 
    ```
    mstsc /v:<az1010301w-lb_public_IP>:33890
@@ -656,7 +656,7 @@ Adatum Corporation은 Azure VM 호스팅 웹 워크로드를 구현하고 Azure 
 
    > **참고**:  현재 Azure 구독에서 Cloud Shell을 처음 시작하는 경우 Cloud Shell 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 스토리지 계정이 생성됩니다.
 
-1. Cloud Shell 창에서 다음 명령을 실행하여 &lt;TM_DNS_name&amp;lt; 자리 표시자를 이전 작업에서 식별한 Traffic Manager 프로필에 할당된 DNS 이름 값으로 바꿉니다.
+1. Cloud Shell 창에서 다음 명령을 실행하여 &lt;TM_DNS_name&gt; 자리 표시자를 이전 작업에서 식별한 Traffic Manager 프로필에 할당된 DNS 이름 값으로 바꿉니다.
 
    ```
    nslookup <TM_DNS_name>

@@ -385,7 +385,7 @@ Adatum Corporation은 Azure VM 및 Azure VM Scale Sets에서 실행되는 워크
    mstsc /f /v:<public_IP_address>:50000
    ```
 
-   > **참고**: 자리 표시자 및 public_IP_address&gt;를 이 작업의 앞에서 확인한 공용 IP 주소의 값으로 바꿔야 합니다.
+   > **참고**: 자리 표시자 및 &lt;public_IP_address&gt; 를 이 작업의 앞에서 확인한 공용 IP 주소의 값으로 바꿔야 합니다.
 
 1. RDP를 통해 VM Scale Sets의 VM 인스턴스에 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공하십시오:
 

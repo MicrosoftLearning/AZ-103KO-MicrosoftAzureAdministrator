@@ -75,7 +75,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
     - 크기: **표준 DS2_v2**
 
-    - 사용자 이름: **학생**
+    - 사용자 이름: **Student**
 
     - 암호: **Pa55w.rd1234**
 
@@ -250,7 +250,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
     - PIP 이름 접두사: **az1000302-ip**
 
-    - 관리자 사용자 이름: **학생**
+    - 관리자 사용자 이름: **Student**
 
     - 관리자 암호: **Pa55w.rd1234**
 
@@ -349,7 +349,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. 메시지가 표시되면 다음 자격 증명을 지정하여 인증합니다.
 
-    - 사용자 이름: **학생**
+    - 사용자 이름: **Student**
 
     - 암호: **Pa55w.rd1234**
 
@@ -376,7 +376,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. 메시지가 표시되면 다음 값을 지정하여 인증합니다.
 
-    - 사용자 이름: **학생**
+    - 사용자 이름: **Student**
 
     - 암호: **Pa55w.rd1234**
 
@@ -444,7 +444,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
     - 가용성 영역: **없음**
 
-    - 사용자 이름: **학생**
+    - 사용자 이름: **Student**
 
     - 암호: **Pa55w.rd1234**
 

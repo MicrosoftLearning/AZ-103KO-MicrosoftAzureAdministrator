@@ -304,9 +304,9 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. **az1000302-vm0** 블레이드에서 **네트워킹** 블레이드를 표시합니다.
 
-1. **az1000302-vm0 - 네트워킹** 블레이드에서 네트워크 인터페이스를 나타내는 항목을 클릭합니다. 이름이 az1000302-vm0로 시작하는 항목입니다.
+1. **az1000302-vm0 - 네트워킹** 블레이드에서 네트워크 인터페이스 **az1000302-nic0** 를 클릭합니다. 
 
-1. **az1000302-vm0** 의 네트워크 인터페이스의 속성을 표시하는 블레이드에서 **IP 구성** 블레이드로 이동합니다.
+1. **az1000302-nic0** 의 네트워크 인터페이스의 속성을 표시하는 블레이드에서 **IP 구성** 블레이드로 이동합니다.
 
 1. **IP 구성** 블레이드에서 **ipconfig1** 개인 IP 주소를 정적으로 구성하고 **10.103.0.100** 으로 설정한 후 **저장** 을 클릭합니다.
 
@@ -325,13 +325,13 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
    > **참고**: 기본 제공 규칙으로 구성된 기본 구성은 인터넷에서 인바운드 연결을 차단합니다(RDP 포트 TCP 3389를 통한 연결 포함).
 
-1. 다음 설정을 사용하여 기존 네트워크 보안 그룹에 인바운드 보안 규칙을 추가합니다.
+1. 다음 설정을 사용하여 기존 네트워크 보안 그룹에 **인바운드 보안 규칙 추가**를 클릭 합니다.
 
-    - 원본: **아무**
+    - 원본: **Any**
 
     - 소스 포트 범위: **\***
 
-    - 대상: **아무**
+    - 대상: **Any**
 
     - 대상 포트 범위: **3389**
 
@@ -342,10 +342,12 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
     - 우선 순위: **100**
 
     - 이름: **AllowInternetRDPInBound**
+    
+    - **추가**
 
 1. Azure Portal에서 **az1000301-vm0** 블레이드의 **개요** 창을 표시합니다. 
 
-1. **az1000301-vm0** 블레이드의 **개요** 창에서 **연결** 을 클릭하고 RDP 파일을 생성하여 이 파일을 **az1000301-vm0** 에 연결하는 데 사용합니다.
+1. **az1000301-vm0** 블레이드의 **개요** 창에서 **연결** 을 클릭하고 **RDP 파일 다운로드** 을 생성하여 이 파일을 **az1000301-vm0** 에 연결하는 데 사용합니다.
 
 1. 메시지가 표시되면 다음 자격 증명을 지정하여 인증합니다.
 
@@ -356,9 +358,9 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 #### 작업 3: 개인 IP 주소를 통해 Linux Ubunto 서버를 실행하는 Azure VM에 연결.
  
-1. RDP 세션에서 **az1000301-vm0** 내에서, **명령 프롬프트** 를 시작합니다.
+1. RDP 세션에서 **az1000301-vm0** 내에서, **Command Prompt** 를 시작합니다.
 
-1. 명령 프롬프트에서 다음을 실행합니다.
+1. Command Prompt에서 다음을 실행합니다.
 
 ```
    nslookup az1000302-vm0
@@ -366,11 +368,11 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. 출력을 검사하고 이 연습의 첫 번째 작업에서 할당한 IP 주소로 이름이 확인됩니다(**10.103.0.100**).
 
-   > **참고**: 예상되던 상황입니다. Azure는 가상 네트워크 내에서 기본 제공 DNS 이름 확인을 제공합니다. 
+   > **참고**: Azure는 가상 네트워크 내에서 기본 제공 DNS 이름 확인을 제공합니다. 
 
-1. **az1000301-vm0** 에 대한 RDP 세션 내의 서버 관리자에서 **로컬 서버** 를 클릭하고 **IE 강화 보안 구성** 을 사용하지 않도록 설정합니다.
+1. **az1000301-vm0** 에 대한 RDP 세션 내의 **Server Manager**에서 **Local Server** 를 클릭하고 **IE Enhanced Security Configuration** 을 사용하지 않도록 **Off** 설정합니다.
 
-1. **az1000301-vm0** 에 RDP 세션 내에서, Internet Explorer를 시작하고 [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) 에서 **putty.exe** 를 다운로드합니다. 
+1. **az1000301-vm0** 에 RDP 세션 내에서, Internet Explorer를 시작하고 [**https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html**](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) 에서 **putty.exe** 를 다운로드후 설치합니다. 
 
 1. **putty.exe** 를 사용하여 **SSH** 프로토콜(TCP 22)을 통해 개인 IP 주소에서(**10.103.0.100**) **az1000302-vm0** 에 성공적으로 연결할 수 있는지 확인합니다.
 
@@ -410,7 +412,7 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. Azure Portal에서 Cloud Shell 창에서 PowerShell 세션을 시작하세요. 
 
-1. Cloud Shell 창에서 다음 명령을 실행하여 자리 표시자 및 &lt;custom-label&gt;을 고유할 가능성이 높은 문자열로 대체합니다.
+1. Cloud Shell 창에서 다음 명령을 실행하여 &lt;custom-label&gt;를 원하는 고유한 DNS라벨로 대체합니다.
 
 ```pwsh
    $rg = Get-AzResourceGroup -Name az1000301-RG
@@ -426,11 +428,11 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. Azure Portal에서 **리소스 만들기** 블레이드로 이동합니다.
 
-1. **리소스 만들기** 블레이드에서 Azure Marketplace에서 **가상 머신 확장 집합** 을 검색합니다.
+1. **리소스 만들기** 블레이드에서 Azure Marketplace에서 **Virtual machine scale set** 을 검색합니다.
 
-1. 검색 결과 목록을 사용하여 **가상 머신 확장 집합 만들기** 블레이드로 이동합니다.
+1. 검색 결과 목록을 사용하여 **Virtual machine scale set 만들기** 블레이드로 이동합니다.
 
-1. **가상 머신 확장 집합 만들기** 블레이드를 사용하여 다음 설정으로 가상 머신 확장 집합을 배포합니다.
+1. **Virtual machine scale set 만들기** 블레이드를 사용하여 다음 설정으로 가상 머신 확장 집합을 배포합니다.
 
     - 가상 머신 확장 집합 이름: **az1000303vmss0**
 
@@ -454,9 +456,9 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
     - 낮은 우선 순위로 배포: **아니요**
 
-    - Managed Disks 사용: **예**
+    - 관리 디스크 사용: **예**
 
-    - 자동 크기 조정: **비활성화**
+    - 자동 크기 조정: **사용 안 함**
 
     - 부하 분산 옵션을 선택합니다. **부하 분산 장치**
 
@@ -464,25 +466,30 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
     - 도메인 이름 레이블: 이전 작업에서 식별한 &lt;custom-label&gt; 값을입력합니다.
 
-    - 가상 네트워크: 다음 설정이 있는 새 가상 네트워크 **az1000303-vnet0** 의 이름.
+    - 가상 네트워크: **새로 만들기**
+        - 이름 : **az1000303-vnet0**
 
         - 주소 범위: **10.203.0.0/16**
 
         - 서브넷 이름: **subnet0**
 
         - 서브넷 주소 범위: **10.203.0.0/24**
+        
+        - 확인
 
-    - 인스턴스당 공용 IP 주소: **꺼짐**
+    - 인스턴스당 공용 IP 주소: **끄기**
     
-    - 빠른 네트워킹: **꺼짐**
+    - 빠른 네트워킹: **끄기**
     
     - NIC 네트워크 보안 그룹: **기본**
     
-    - 인바운드 포트 선택: **HTTP**
+    - 공용 인바운드 포트 선택: **선택한 포트 허용** **HTTP(80)**
     
-    - 부팅 진단: **꺼짐**
+    - 부팅 진단: **끄기**
     
-    - 시스템이 할당한 관리 ID: **꺼짐**
+    - 시스템이 할당한 관리 ID: **끄기**
+    
+    - 만들기
 
    > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5분이 소요됩니다.
 
@@ -491,35 +498,37 @@ Adatum Corporation은 Azure 가상 시스템(VM) 및 Azure VM Scale Sets를 사�
 
 1. Azure Portal에서 **az1000303vms0** 블레이드로 이동합니다.
 
-1. **az1000303vms0** 블레이드에서 확장 블레이드를 표시합니다.
+1. **az1000303vms0** 블레이드에서 **확장** 블레이드에서 **+추가**를 선택.
 
-1. **az1000303vms0 - 확장** 블레이드에서 다음 설정으로 **PowerShell 원하는 상태 구성** 확장을 추가합니다.
+1. 새 리소스 목록에서 **PowerShell Desired State** 확장을 **만들기** 합니다.
 
    > **참고**: DSC 구성 모듈은 **Labfiles\\Module_02\\Deploy_and_Manage_Virtual_Machines\\az-100-03_install_iis_vmss.zip** 에서 업로드할 수 있습니다. 이 모듈에는 IIS(웹 서버) 역할을 설치하는 DSC 구성 스크립트가 포함되어 있습니다.
 
-    - 구성 모듈 또는 스크립트: **"az-100-03_install_iis_vmss.zip"**
+    - Configuration Modules or Script : **"az-100-03_install_iis_vmss.zip"**
 
-    - 모듈 인증 구성 이름: **az-100-03_install_iis_vmss.ps1\IISInstall**
+    - Module-qualified Name of Configuration : **az-100-03_install_iis_vmss.ps1\IISInstall**
 
-    - 구성 인수: 비워 둡니다
+    - Configuration Arguments : 비워 둡니다
 
-    - 구성 데이터 PSD1 파일: 비워 둡니다
+    - Configuration Data PSD1 File : 비워 둡니다
 
-    - WMF 버전: **최신**
+    - WMF Version : **latest**
 
-    - 데이터 컬렉션: **비활성화**
+    - Data Collection : **Disable**
 
-    - 버전: **2.76**
+    - Version : **2.76**
 
-    - 자동 업그레이드 마이너 버전: **예**
+    - Auto Upgrade Minor Version: **Yes**
+    
+    - **확인**
 
-1. **az1000303vms0 - 인스턴스** 블레이드로 이동하여 **az1000303vmss0_0** 인스턴스의 **업그레이드를** 시작합니다.
+1. **az1000303vms0 - 인스턴스** 블레이드로 이동하여 **az1000303vmss0_0** 인스턴스를 선택하고 상단 메뉴의 **업그레이드** 시작합니다.
 
    > **참고**: 이 업데이트는 DSC 구성 스크립트의 응용 프로그램을 트리거합니다. 업그레이드가 완료될 때까지 기다립니다. 약 5분이 소요됩니다. **az1000303vms0 - 인스턴스** 블레이드에서 진행 상황을 모니터링할 수 있습니다.
 
 1. 업그레이드가 완료되면 **개요** 블레이드로 이동합니다. 
 
-1. **az1000303vms0-IP** 블레이드에서 **az1000303vmss0** 에 할당된 공용 IP 주소를 기록하세요.
+1. **az1000303vms0-IP** 블레이드에서 **az1000303vmss0** 에 할당된 **공용 IP 주소**를 기록하세요.
 
 1. Microsoft Edge를 시작하고 이전 단계에서 식별한 공용 IP 주소로 이동합니다.
 

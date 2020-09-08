@@ -6,7 +6,7 @@ lab:
 
 # 랩: Azure 파일 동기화 구현
 
-이 실습의 모든 작업은 Azure 포털에서 수행됩니다. 단, 연습 1 및 연습 2의 단계는 Azure VM에 대한 원격 데스크톱 세션에서 수행해야합니다.
+본 랩의 모든 작업은 Azure 포털에서 수행됩니다. 단, 연습 1 및 연습 2 단계는 원격 데스크톱 세션에서 Azure VM으로 수행됩니다.
 
 랩 파일: 
 
@@ -16,11 +16,11 @@ lab:
 
 ### 시나리오
   
-Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호스팅합니다. 대부분의 워크로드를 Azure로 마이그레이션하려는 계획을 고려할 때 Adatum은 Azure에서 사용할 수 있는 파일 공유에 데이터를 복제하는 가장 효율적인 방법을 찾고 있습니다. 이를 구현하기 위해 Adatum은 Azure 파일 동기화를 사용합니다.
+Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호스팅합니다. Adatum은 대부분의 워크로드를 Azure로 마이그레이션하려는 플랜을 고려하여 Azure에서 사용할 수 있는 파일 공유에 데이터를 복제하는 가장 효율적인 방법을 찾고 있습니다. 이를 구현하기 위해 Adatum은 Azure 파일 동기화를 사용합니다.
 
-### 목표
+### 목적
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+본 랩을 완료하면 다음을 수행할 수 있습니다.
 
 -  Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
 
@@ -29,16 +29,16 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 -  Azure 파일 동기화 구현 및 유효성 검사
 
 
-### 연습 0: 랩 환경 준비
+### 연습 0: 랩 환경 준비.
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
-1. Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
+1. Azure Resource Manager 템플릿을 사용하여 Azure VM 배포.
 
 
-#### 작업 1: Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
+#### 작업 1: Azure Resource Manager 템플릿을 사용하여 Azure VM 배포.
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -78,9 +78,9 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
     - Virtual Network Name: **az1000201b-vnet1**
 
-   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)을 참고하십시오.
 
-   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습으로 진행합니다. 이 랩의 다음 연습에서는 이 배포에 포함된 가상 머신를 사용합니다.
+   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습을 진행합니다. 본 랩의 다음 연습에서는 이 배포에 포함된 가상 머신을 사용합니다.
 
    > **참고**: Azure VM **az1000201b-vm1** 의 목적은 시나리오에서 온-프레미스 파일 서버를 에뮬레이트하는 것입니다.
 
@@ -89,16 +89,16 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 ### 연습 1: Azure 파일 동기화 인프라 준비
 
-이 연습의 주요 작업은 다음과 같습니다:
+본 연습의 주요 작업은 다음과 같습니다:
 
-1. Azure 저장소 계정 및 파일 공유 만들기
+1. Azure 스토리지 계정 및 파일 공유 만들기
 
-1. Azure 파일 동기화와 함께 사용할 Windows Server2016 준비
+1. Azure 파일 동기화에 사용할 Windows Server 2016 준비
 
 1. Azure 파일 동기화 평가 도구 실행
 
 
-#### 작업 1: Azure 저장소 계정 및 파일 공유 만들기
+#### 작업 1: Azure 스토리지 계정 및 파일 공유 만들기
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -106,15 +106,15 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. 검색 결과 목록을 사용하여 **스토리지 계정 만들기** 블레이드로 이동합니다.
 
-1. **스토리지 계정 만들기** 블레이드에서 다음 설정으로 새 스토리지 계정을 만듭니다: 
+1. **스토리지 계정 만들기** 블레이드에서 다음 설정으로 새 스토리지 계정을 만듭니다. 
 
-    - 구독 : 이전 작업에서 선택한 동일한 구독
+    - 구독: 이전 작업에서 선택한 것과 동일한 구독
 
     - 리소스 그룹: **az1000202b-RG** 이름으로 새로 만들기
 
-    - 저장소 계정 이름: 소문자와 숫자로 구성된 3~24자 사이의 유효하고 고유한 이름
+    - 스토리지 계정 이름: 소문자와 숫자로 구성된 3~24자 사이의 유효하고 고유한 이름.
 
-    - 위치: 이전 작업에서 선택한 Azure 지역의 이름
+    - 위치: 이전 작업에서 선택한 Azure 지역의 이름.
 
     - 성능: **표준**
 
@@ -137,13 +137,13 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
     - 할당량: 없음
 
 
-#### 작업 2: Azure 파일 동기화와 함께 사용할 Windows Server2016 준비
+#### 작업 2: Azure 파일 동기화에 사용할 Windows Server 2016 준비
 
    > **참고**: 이 작업을 시작하기 전에 연습 0에서 시작한 템플릿 배포가 완료되었는지 확인합니다. 
 
 1. Azure 포털에서 **az1000201b-vm1** 블레이드로 이동합니다.
 
-1. **az1000201b-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다:
+1. **az1000201b-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 
     - 관리자 사용자 이름: **Student**
 
@@ -164,6 +164,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 1. Windows PowerShell 콘솔에서 다음을 실행하여 파일 공유를 설정합니다.
 
    ```powershell
+
    $directory = New-Item -Type Directory -Path 'S:\az10002bShare'
 
    New-SmbShare -Name $directory.Name -Path $directory.FullName -FullAccess 'Administrators' -ReadAccess Everyone   
@@ -171,15 +172,15 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
    Copy-Item -Path 'C:\WindowsAzure\*' -Destination $directory.FullName –Recurse
    ```
 
-   > **참고**: 파일 공유를 샘플 데이터로 채우려면 약 100MB 상당의 파일이 포함되어야 하는 C:\\WindowsAzure 폴더의 콘텐츠를 사용합니다.
+   > **참고**: 파일 공유를 샘플 데이터로 채우려면 약 100MB 상당의 파일이 포함되어야 하는 *C:\\WindowsAzure* 폴더의 콘텐츠를 사용합니다.
 
-1. Windows PowerShell 콘솔에서 다음을 실행하여 최신 AzureRM 모듈을 설치합니다.
+1. Windows PowerShell 콘솔에서 다음을 실행하여 최신 Az PowerShell 모듈을 설치합니다.
 
    ```powershell
    Install-Module -Name Az -AllowClobber
    ```
 
-   > **참고**: 메시지가 표시되면 PSGallery 리포지토리에서 설치를 진행하려는지 확인합니다.
+   > **참고**: 메시지가 표시되면 PSGallery 리포지토리에서 설치를 계속 진행하려는지 확인합니다.
 
 
 #### 작업 3: Azure 파일 동기화 평가 도구 실행
@@ -190,9 +191,9 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
    Install-Module -Name PackageManagement -Repository PSGallery -Force
 
    Install-Module -Name PowerShellGet -Repository PSGallery -Force
-   ```
+```
 
-   > **참고**: 메시지가 표시되면 NuGet 공급자의 설치를 진행하려는지 확인합니다.
+   > **참고**: 메시지가 표시되면 NuGet 공급자의 설치를 계속 진행할지 확인합니다.
 
 1. PowerShell 세션을 다시 시작합니다.
 
@@ -202,26 +203,26 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
    Install-Module -Name Az.StorageSync -AllowClobber -Force
    ```
 
-1. Windows PowerShell 콘솔에서 다음을 실행하여 Azure 파일 동기화 PowerShell 모듈을 설치합니다.
+1. Windows PowerShell 콘솔에서 S:\az10002bShare 파일 공유에 Azure 파일 동기화와의 호환성 문제가 없는지 확인합니다.:
 
    ```powershell
    Invoke-AzStorageSyncCompatibilityCheck -Path 'S:\az10002bShare'
-   ```
+```
 
 1. 결과를 검토하고 호환성 문제가 발견되지 않았는지 확인합니다.
 
-> **결과**: 이 연습을 완료한 후 Azure Storage 계정 및 파일 공유를 만들고, Azure 파일 동기화와 함께 사용할 Windows Server 2016을 준비하고, Azure 파일 동기화 평가 도구를 실행했습니다.
+> **결과**: 본 연습을 완료한 후 Azure 스토리지 계정 및 파일 공유를 만들었으며, Azure 파일 동기화에 사용할 Windows Server 2016을 준비하고 Azure 파일 동기화 평가 도구를 실행합니다.
 
 
 ### 연습 2: Azure 파일 동기화 인프라 준비
 
-이 연습의 주요 작업은 다음과 같습니다:
+본 연습의 주요 작업은 다음과 같습니다:
 
-1. 스토리지 동기화 서비스 배포
+1. 저장소 동기화 서비스 배포
 
 1. Azure 파일 동기화 에이전트 설치
 
-1. 스토리지 동기화 서비스로 Windows 서버 등록
+1. 저장소 동기화 서비스에 Windows Server 등록
 
 1. 동기화 그룹 및 클라우드 엔드포인트 만들기
 
@@ -230,11 +231,11 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 1. Azure 파일 동기화 작업의 유효성 검사
 
 
-#### 작업 1: 스토리지 동기화 서비스 배포
+#### 작업 1: 저장소 동기화 서비스 배포
 
-1. Azure VM에 대한 RDP 세션 내에서, 관리자에서 로컬 서버 보기로 이동하여 일시적으로 **IE 고급 보안 구성** 을 끕니다.
+1. Azure VM에 대한 RDP 세션 내의 서버 관리자에서 로컬 서버 보기로 이동하여 일시적으로 **IE 고급 보안 구성**을 끕니다.
 
-1. Azure VM에 대한 RDP 세션 내에서, Internet Explorer를 시작하고 **[http://portal.azure.com**](http://portal.azure.com)에서 Azure 포털을 탐색하고 이 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
+1. Azure VM에 대한 RDP 세션 내에서 Internet Explorer를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)에서 Azure 포털을 탐색한 다음 본 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -246,7 +247,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
     - 스토리지 동기화 서비스 이름: **az1000202b-ss**
 
-    - 구독 : 이전 작업에서 선택한 동일한 구독
+    - 리소스 그룹: 새 리소스 그룹 **az1000203b-RG**의 이름
 
     - 리소스 그룹: **az1000203b-RG** 이름으로 새로 만들기
 
@@ -257,37 +258,37 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. RDP 세션 내에서 Internet Explorer의 다른 인스턴스를 시작하고 [**https://go.microsoft.com/fwlink/?linkid=858257**](https://go.microsoft.com/fwlink/?linkid=858257) 에서 Microsoft 다운로드 센터를 찾아보고 Azure 파일 동기화 에이전트 Windows Installer 파일 **StorageSyncAgent_WS2016.msi** 를 다운로드합니다.
 
-1. 다운로드가 완료되면 기본 설정으로 저장소 동기화 에이전트 설치 마법사를 실행하여 Azure File Sync 에이전트를 설치합니다.
+1. 다운로드가 완료되면 기본 설정으로 저장소 동기화 에이전트 설치 마법사를 실행하여 Azure 파일 동기화 에이전트를 설치합니다.
 
 1. Azure 파일 동기화 에이전트 설치가 완료되면 **Azure 파일 동기화 - 서버 등록** 마법사가 자동으로 시작됩니다.
 
 
-#### 작업 3: 스토리지 동기화 서비스로 Windows 서버 등록
+#### 작업 3: 저장소 동기화 서비스에 Windows Server 등록
 
-1. **Azure 파일 동기화 - 서버 등록** 마법사의 초기 페이지에서 이 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
+1. **Azure 파일 동기화 - 서버 등록** 마법사의 초기 페이지에서 본 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 로그인합니다.
 
 1. **Azure 파일 동기화 - 서버 등록** 마법사의 **저장소 동기화 서비스 선택** 페이지에서 등록할 다음 설정을 지정합니다.
 
-    - Azure 구독: 이 랩에서 사용 중인 구독의 이름
+    - Azure 구독: 본 랩에서 사용 중인 구독의 이름
 
     - 리소스 그룹: **az1000203b-RG**
 
-    - 스토리지 동기화 서비스: **az1000202b-ss**
+    - 저장소 동기화 서비스: **az1000202b-ss**
 
-1. 메시지가 표시되면 이 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 다시 로그인합니다.
+1. 메시지가 표시되면 본 랩에서 이전에 사용한 것과 동일한 Microsoft 계정을 사용하여 다시 로그인합니다.
 
 
 #### 작업 4: 동기화 그룹 및 클라우드 엔드포인트 만들기
 
-1. Azure VM에 대한 RDP 세션에서 Azure 포털에서 **az1000202b-ss** 스토리지 동기화 서비스 블레이드로 이동합니다.
+1. Azure VM에 대한 RDP 세션 내의 Azure 포털에서 **az1000202b-ss** 저장소 동기화 서비스 블레이드로 이동합니다.
 
-1. **az1000202b-ss** 스토리지 동기화 서비스 블레이드에서 **동기화 그룹** 블레이드로 이동하여 다음 설정으로 새 동기화 그룹을 만듭니다.
+1. **az1000202b-ss** 저장소 동기화 서비스 블레이드에서 **동기화 그룹** 블레이드로 이동하여 다음 설정으로 새 동기화 그룹을 만듭니다.
 
     - 동기화 그룹 이름: **az1000202b-syncgroup1**
 
     - 구독: 이 랩에서 사용 중인 구독의 이름
 
-    - 스토리지 계정 : 이전 연습에서 생성한 스토리지 계정의 리소스 ID
+    - 스토리지 계정: 이전 연습에서 생성한 스토리지 계정의 리소스 ID
 
     - Azure 파일 공유: **az10002bshare1**
 
@@ -321,7 +322,7 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. Azure 포털에서 **az10002bshare1** 블레이드로 이동하여 **연결** 블레이드를 표시합니다.
 
-1. **연결** 블레이드에서 Windows 컴퓨터의 파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
+1. **연결** 블레이드에서 Windows 컴퓨터에서 파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
 
 1. RDP 세션 내에서 Windows PowerShell ISE 세션을 시작합니다. 
 
@@ -333,8 +334,11 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 
 1. RDP 세션 내에서 파일 탐색기를 시작하고 Z: 드라이브로 이동한 다음 S:\\az10002bShare와 동일한 콘텐츠가 포함되어 있는지 확인합니다.
 
-1. Z: 드라이브에 개별 폴더의 속성 창을 표시하고 보안 탭을 검토하고 항목이 S: 드라이브의 해당 폴더에 할당된 NTFS 권한을 나타냅니다.
+```sh
+   az group list --query "[?starts_with(name,'az100020')].name" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
+```
 
+1. 포털 하단에 있는 **Cloud Shell** 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 Storage Sync Service를 배포하고, Azure File Sync Agent를 설치하고, Windows Server를 Storage Sync Service에 등록하고, 동기화 그룹 및 클라우드 엔드 포인트를 만들고, 서버 엔드 포인트를 만들고, Azure File Sync 작업의 유효성을 검사했습니다.
 
@@ -366,3 +370,4 @@ Adatum Corporation은 온-프레미스 파일 서버에서 파일 공유를 호�
 1. **Cloud Shell** 명령 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 이 랩에서 사용된 리소스 그룹을 제거했습니다.
+

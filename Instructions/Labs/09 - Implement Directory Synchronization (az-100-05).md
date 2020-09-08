@@ -6,9 +6,9 @@ lab:
 
 # 랩: 디렉터리 동기화 구현
   
-이 실습의 모든 작업은 실습 3 작업 1, 실습 3 작업 2 및 실습 3 작업 3을 제외한 Azure 포털 (PowerShell Cloud Shell 세션 포함)에서 수행되며 원격 데스크톱 세션에서 Azure VM으로 수행되는 단계가 포함됩니다
+이 랩의 모든 작업은 연습 3 작업 1, 연습 3 작업 2 및 연습 3 작업 3을 제외한 Azure Portal(PowerShell Cloud Shell 세션 포함)에서 수행되며 원격 데스크톱 세션에서 Azure VM으로 수행되는 단계가 포함됩니다.
 
-   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 시스템에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다.[https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0)
+   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 머신에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다. [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps)
 
 랩 파일: 없음
 
@@ -19,7 +19,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 ### 목표
   
- 이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+ 이 랩을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
 - Active Directory 도메인 컨트롤러를 호스팅하는 Azure VM 배포
 
@@ -39,19 +39,20 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 #### 작업 1: Azure VM 배포에 사용할 수 있는 DNS 이름 식별
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 ** [http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 **[http://portal.azure.com**](http://portal.azure.com) 에서 Azure Portal을 찾아봅니다. 그리고 이 랩에서 사용할 Azure 구독에서 owner 역할을 가지고 있으며 해당 구독과 연결된 Azure AD 테넌트의 전역 관리자인 Microsoft 계정을 사용하여 로그인합니다.
 
-1. Azure 포털에서 Cloud Shell 창에서 PowerShell 세션을 시작하십시오.
+1. Azure Portal에서, Cloud Shell 창에서 PowerShell 세션을 시작하십시오.
 
    > **참고**: 현재 Azure 구독에서 Cloud Shell을 처음 시작하는 경우 Cloud Shell 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 저장소 계정이 생성됩니다.
 
 1. Cloud Shell (Cloud Shell) 창에서 다음 명령을 실행하여 &lt;custom-label&gt; 고유 할 가능성이있는 임의의 문자열 및 자리 표시 자 &lt;location&gt; Active Directory 도메인 컨트롤러를 호스팅 할 Azure VM을 배포 할 Azure 영역의 이름을 지정합니다.
 
-   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)을 참고하십시오.
 
    ```pwsh
+
    Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location>'
-   ```
+```
 
 1. 결과가 **True**인지 확인합니다. 그렇지 않은 경우 &lt;custom-label&gt;을 다른 값으로 변경하여 동일한 명령을 **True** 를 반환할 때까지 다시 실행합니다.
 
@@ -88,29 +89,30 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
     
     - VM Size: **Standard_D2s_v3**
 
+
     - _artifacts Location: 기본 값
 
     - _artifacts Location Sas Token: 비워 둡니다.
 
     - Location: accept 기본 값
 
-   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습으로 진행합니다. 이 작업의 세 번째 실습에서이 작업에 배포 된 가상 컴퓨터를 사용합니다.
+   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습을 진행합니다. 이 랩의 세 번째 연습에서이 작업에 배포된 가상 머신을 사용합니다.
 
-> **결과**: 이 연습을 완료한 후 Azure 리소스 관리자 템플릿을 사용하여 Active Directory 도메인 컨트롤러를 호스트하는 Azure VM의 배포를 시작했습니다
+> **결과**: 이 연습을 통해, Azure Resource Manager 템플릿을 사용하여 Active Directory 도메인 컨트롤러를 호스트하는 Azure VM의 배포를 시작했습니다.
 
 
 ### 연습 2: Azure Active Directory 테넌트 만들기 및 구성
 
 이 연습의 주요 작업은 다음과 같습니다:
 
-1. Azure Active Directory (AD) 테넌트 만들기
+1. Azure Active Directory(AD) 테넌트 만들기
 
 1. 새 Azure AD 테넌트에 사용자 지정 DNS 이름 추가
 
-1. 글로벌 관리자 역할을 사용하여 Azure AD 사용자 만들기
+1. 전역 관리자 역할을 사용하여 Azure AD 사용자 만들기
 
 
-#### 작업 1: Azure Active Directory (AD) 테넌트 만들기
+#### 작업 1: Azure Active Directory(AD) 테넌트 만들기
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -126,7 +128,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
   - 국가 또는 지역: **미국**
 
-   > **참고**: **초기 도메인 이름** 텍스트 상자의 녹색 확인 표시는 입력 한 도메인 이름이 유효하고 고유한지 여부를 나타냅니다. 
+   > **참고**: **초기 도메인 이름** 텍스트 상자의 녹색 확인 표시는 입력한 도메인 이름이 유효하고 고유한지 여부를 나타냅니다. 
 
 
 #### 작업 2: 새 Azure AD 테넌트에 사용자 지정 DNS 이름 추가
@@ -145,16 +147,17 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **AdatumSync - 사용자 지정 도메인 이름** 블레이드에서 **adatum.com** 사용자 지정 도메인을 추가합니다.
 
-1. **adatum.com** Azure에서 Azure AD 도메인 이름 확인을 수행하는 데 필요한 정보를 검토합니다.
+1. Azure Portal에서 **AdatumSync - 개요** 블레이드로 이동합니다.
 
-   > **참고**: **adatum.com** DNS 도메인 이름을 소유하지 않으므로 유효성 검사 프로세스를 완료할 수 없습니다. 이렇게 하면 **adatum.com** Active Directory 도메인을 AzureAD 테넌트와 동기화할 수 없습니다. 이 목적을 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 기본 DNS 이름(**onmicrosoft.com** 접미사로 끝나는 이름)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있습니다. 즉, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 다른 이름을 사용해야 합니다.
+1. **AdatumSync - 개요** 블레이드에서 **AdatumSync - 사용자 지정 도메인 이름** 블레이드를 표시합니다. 
 
+1. **AdatumSync - 사용자 지정 도메인 이름** 블레이드에서 Azure AD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 그 값을 기록해 두세요. 다음 작업에서 필요할 것입니다.
 
-#### 작업 3: 글로벌 관리자 역할을 사용하여 Azure AD 사용자 만들기
+1. **AdatumSync - 사용자 지정 도메인 이름** 블레이드에서 **adatum.com** 사용자 지정 도메인을 추가합니다.
 
-1. Azure 포털에서 **AdatumSync** Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
+1. **adatum.com** 블레이드에서 Azure AD 도메인 이름 확인을 수행하는 데 필요한 정보를 검토합니다.
 
-1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다:
+   > **참고**: **adatum.com** DNS 도메인 이름이 없으므로 유효성 검사 프로세스를 완료할 수 없습니다. 따라서 **adatum.com** Active Directory 도메인을 Azure AD 테넌트와 동기화할 수 없습니다. 이를 위해 이 작업의 앞에서 식별한 Azure AD 테넌트의 기본 DNS 이름**(onmicrosoft.com** 접미사로 끝나는 이름)을 사용합니다. 그러나 결과적으로 Active Directory 도메인의 DNS 도메인 이름과 Azure AD 테넌트의 DNS 이름이 다를 수 있다는 점을 기억해 두세요. 이 경우, Adatum 사용자는 Active Directory 도메인에 로그인할 때와 Azure AD 테넌트에 로그인할 때 각기 다른 이름을 사용해야 합니다.
 
     - 이름: **syncadmin**
 
@@ -166,21 +169,19 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
     - 그룹: **0개 그룹 선택됨**
 
-    - 디렉터리 역할: **전역 관리자**
-
-    - 암호: **암호 표시** 확인란을 선택하고 **암호** 텍스트 상자에 나타나는문자열을 기록합니다. 이 작업의 뒷부분에서 필요할 것입니다.
+    - 디렉터리 역할: "사용자"를 클릭한 후 **전역 관리자**를 선택합니다.
 
    > **참고**: Azure AD Connect를 구현하려면 전역 관리자 역할을 가진 Azure AD 사용자가 필요합니다.
 
 1. Microsoft Edge의 새 InPrivate 창을 엽니다.
 
-1. 새 브라우저 창에서 Azure 포털로 이동하고 **syncadmin** 사용자 계정을 사용하여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
+1. 새 브라우저 창에서 Azure Portal로 이동하고 **syncadmin** 사용자 계정을 사용하여 로그인합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
 
-   > **참고**: AzureAD 테넌트 DNS 도메인 이름을 포함하여 **syncadmin** 사용자 계정의 정규화된 이름을 제공해야 합니다. 
+   > **참고**: Azure AD 테넌트 DNS 도메인 이름을 포함하여 **syncadmin** 사용자 계정의 정규화된 이름을 제공해야 합니다. 
 
-1. **syncadmin** 로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
+1. **syncadmin**으로 로그아웃하고 InPrivate 브라우저 창을 닫습니다.
 
-> **결과**: 이 연습을 완료한 후 Azure AD 테넌트를 만들고, 새 Azure AD 테넌트에 사용자 지정 DNS 이름을 추가하고, 글로벌 관리자 역할을 가진 Azure AD 사용자를 만들었습니다.
+> **결과**: 이 연습을 통해 Azure AD 테넌트를 만들고, 새 Azure AD 테넌트에 사용자 지정 DNS 이름을 추가하고, 전역 관리자 역할을 가진 Azure AD 사용자를 만들었습니다.
 
 
 ### 연습 3: Azure Active Directory 테넌트를 사용하여 Active Directory 포리스트를 동기화 합니다
@@ -198,15 +199,17 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
    > **참고**: 이 작업을 시작하기 전에 연습 1에서 시작한 템플릿 배포가 완료되었는지 확인합니다.
   
-1. Azure 포털에서 **디렉터리 + 구독** 필터를 이 랩의 첫 번째 연습에서 사용한 Azure 구독과 연결된 Azure AD 테넌트로 다시 설정합니다.
+1. Azure Portal에서 **디렉터리 + 구독** 필터를 이 랩의 첫 번째 연습에서 사용한 Azure 구독과 연결된 Azure AD 테넌트로 다시 설정합니다.
+
+   > **참고**: **디렉토리 + 구독** 필터가 Azure Portal의 도구 모음에 있는 알림 아이콘 왼쪽에 나타납니다. 
 
    > **참고**: **디렉토리 + 구독** 필터가 Azure 포털의 툴바에 있는 알림 아이콘 왼쪽에 있습니다. 
 
-1. Azure 포털에서 **adVM** 블레이드로 이동하여 이 랩의 첫 번째 연습에서 배포한 Active Directory 도메인 컨트롤러를 호스팅하는 Azure VM의 속성을 표시합니다.
+1. **adVM** 블레이드의 **개요** 창에서 **연결**을 클릭합니다.
 
-1. **adVM** 블레이드의 **개요** 창에서 RDP 파일을 생성하고 **adVM**에 연결하는 데 사용합니다.
+1. **가상 머신에 연결** 블레이드의 **IP 주소** 드롭다운 목록에서 부하 분산 장치의 공용 IP 주소를 선택하고 해당 RDP 파일을 다운로드한 후 **adVM**에 연결하는 데 사용합니다.
 
-1. 메시지가 표시되면 다음 자격 증명을 지정하여 인증합니다:
+1. 메시지가 표시되면 다음 자격 증명을 지정하여 인증합니다.
 
     - 사용자 이름: **Student**
 
@@ -214,7 +217,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **adVM** 에 원격 데스크톱 세션 내에서 활성 **Active Directory 관리 센터**를 엽니다.
 
-1. **Active Directory 관리 센터** 에서 **ToSync** 라는 루트 수준 조직 단위를 만듭니다.
+1. **Active Directory 관리 센터**에서 **ToSync** 라는 루트 수준 조직 구성 단위를 만듭니다.
 
 1. **Active Directory 관리 센터** 에서 조직 단위 **ToSync** 에서 다음 설정을 사용하여 새 사용자 계정을만듭니다.
 
@@ -222,11 +225,11 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
     - 사용자 UPN 로그온: **aduser1@adatum.com**
 
-    - 사용자 샘계정 이름 로그온: **adatum\aduser1**
+    - 사용자 SamAccountName 로그온: **adatum\aduser1**
 
     - 암호: **Pa55w.rd1234**
 
-    - 기타 암호 옵션: **암호가 만료되지 않습니다**
+    - 기타 암호 옵션: **암호가 만료되지 않습니다.**
 
 
 #### 작업 2: Azure AD Connect 설치
@@ -235,15 +238,15 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. RDP 세션 내에서 **adVM** 인터넷 익스플로러를 시작하고 [**https://www.microsoft.com/en-us/download/details.aspx?id=47594**](https://www.microsoft.com/en-us/download/details.aspx?id=47594)에서 **Azure AD Connect** 를 다운로드 합니다.
 
-1. **Microsoft Azure Active Directory Connect** 마법사를 시작하고 라이선스 조건을 수락한 다음 **익스프레스 설정** 페이지에서 **사용자 지정** 옵션을 선택합니다.
+1. **Microsoft Azure Active Directory Connect** 마법사를 시작하고 라이선스 사용 약관을 수락한 다음 **기본 설정** 페이지에서 **사용자 지정** 옵션을 선택합니다.
 
 1. **필요한 구성 요소 설치** 페이지에서 모든 선택적 구성 옵션을 선택 취소하고 설치를 시작합니다.
 
-1. **사용자 로그인** 페이지에서 **암호 해시 동기화** 만 사용하도록 설정되어 있는지 확인합니다.
+1. **사용자 로그인** 페이지에서 **암호 해시 동기화**만 사용하도록 설정되어 있는지 확인합니다.
 
 1. Azure AD에 연결하라는 메시지가 표시되면 이전 연습에서 만든 **syncadmin** 계정의 자격 증명을 사용하여 인증합니다.
 
-1. 디렉터리 연결하라는 메시지가 표시되면 **adatum.com** 포리스트를 추가하고 **새 AD 계정 만들기** 옵션을 선택하고 다음 자격 증명을 사용하여 인증합니다:
+1. 디렉터리를 연결하라는 메시지가 표시되면, **adatum.com** 포리스트를 추가하고, **새 AD 계정 만들기** 옵션을 선택하고, 다음 자격 증명을 사용하여 인증합니다:
 
     - 사용자 이름: **ADATUM\\Student**
 
@@ -257,13 +260,13 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **사용자를 고유하게 식별** 페이지에서 기본 설정을 수락합니다.
 
-1. **사용자 및 장치 필터** 페이지에서 기본 설정을 수락합니다.
+1. **사용자 및 장치 필터링**페이지에서 기본 설정을 수락합니다.
 
 1. **선택적 기능** 페이지에서 기본 설정을 수락합니다.
 
 1. **구성 준비** 페이지에서 구성이 완료될 때 **설정 완료 후 동기화 프로세스 시작**이 선택되어 있는지 확인하고 설치합니다. 
 
-   > **참고**: 설치에는 약 2 분이 소요됩니다.
+   > **참고**: 설치에는 약 2분이 소요됩니다.
 
 1. 구성이 완료되면 Microsoft Azure Active Directory Connect 창을 닫습니다.
 
@@ -272,7 +275,7 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **adVM**의 RDP 세션 내에서 Internet Explorer를 시작하고, Azure Portal을 [**http://portal.azure.com**](http://portal.azure.com) 탐색하여 작업 1 에서 만든 **syncadmin** 계정을 사용하여 로그인합니다. 
 
-1. Azure 포털에서 **AdatumSync - 개요** 블레이드로 이동합니다.
+1. Azure Portal에서 **AdatumSync - 개요** 블레이드로 이동합니다.
 
 1. **AdatumSync - 개요** 블레이드에서 AdatumSync Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드입니다.
 
@@ -294,11 +297,11 @@ Adatum Corporation 은 Active Directory 를 Azure Active Directory 와 통합하
 
 1. **adVM**의 RDP 세션 내에서 Azure Portal을 표시하는 Internet Explorer 창으로 전환합니다.
 
-1. Azure 포털에서 **사용자 - 모든 사용자** 블레이드로 돌아가 페이지를 새로 고칩니다. 
+1. **Cloud Shell** 명령 프롬프트에서 다음 명령을 입력하고 **Enter** 키를 눌러 이 랩에서 만든 리소스 그룹을 삭제합니다.
 
 1. **사용자 - 모든 사용자** 블레이드에서 **aduser1 - 프로필** 블레이드로 이동합니다. 이제 **부서** 속성이 **Sales** 로 설정됩니다.
 
-   > **참고**: **부서** 특성이 설정되지 않은 상태로 유지되면 다른 분 동안 기다렸다가 페이지를 다시 새로 고쳐야 할 수 있습니다.
+1. 포털 하단에 있는 **Cloud Shell** 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 디렉터리 동기화를 준비하기 위해 Active Directory를 구성하고, Azure AD Connect를 설치했으며, 확인된 디렉터리 동기화를 구성했습니다.
 

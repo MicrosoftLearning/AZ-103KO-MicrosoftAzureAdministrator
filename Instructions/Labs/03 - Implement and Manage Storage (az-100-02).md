@@ -8,7 +8,7 @@ lab:
 
 이 랩의 모든 작업은 원격 데스크톱 세션에서 Azure VM으로 수행된 단계를 포함하는 연습 2 작업 2를 제외하고 Azure 포털(Cloud Shell의 PowerShell 세션 포함)에서 수행됩니다.
 
-   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 시스템에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다.[https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0)
+   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 머신에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다. [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps)
 
 랩 파일: 
 
@@ -18,29 +18,29 @@ lab:
 
 ### 시나리오
   
-Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 활용하려고 합니다
+Adatum Corporation은 데이터를 호스팅하기 위해 Azure Storage를 활용하려고 합니다
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 랩을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
--  Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
+-  Azure Resource Manager 템플릿을 사용하여 Azure VM 배포.
 
--  Azure Blob 저장소 구현 및 사용
+-  Azure Blob Storage 구현 및 사용
 
--  Azure 파일 저장소 구현 및 사용
+-  Azure File Storage 구현 및 사용
 
 
-### 연습 0: 랩 환경 준비
+### 연습 0: 랩 환경 준비.
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
-1. Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
+1. Azure Resource Manager 템플릿을 사용하여 Azure VM 배포.
 
 
-#### 작업 1: Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
+#### 작업 1: Azure Resource Manager 템플릿을 사용하여 Azure VM 배포.
 
-1. 랩 가상 컴퓨터에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure 포털에서 **구독** 블레이드로 이동합니다.
 
@@ -53,7 +53,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 - Microsoft.Compute
 - Microsoft.Storage
 
-**참고:** 이 단계에서는 Azure Resource Manager Microsoft.Network, Microsoft.Compute 및 Microsoft.Storage 리소스 공급자를 등록합니다. Azure Resource Manager 템플릿을 사용하여 이러한 리소스 공급자가 관리하는 리소스를 배포하는 데 필요한 일회성 작업(구독당)입니다(이러한 리소스 공급자가 아직 등록되지 않은 경우).
+**참고:** 이 단계에서는 Azure Resource Manager Microsoft.Network, Microsoft.Compute 및 Microsoft.Storage 리소스 공급자를 등록합니다. Azure Resource Manager 템플릿을 사용하여 해당 리소스 공급자가 관리하는 리소스를 배포하는 데 필요한 일회성 작업(구독당)입니다(이러한 리소스 공급자가 아직 등록되지 않은 경우).
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -65,7 +65,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. **템플릿 편집** 블레이드에서 템플릿 파일 **Labfiles\\Module_03\\Implement_and_Manage_Storage\\az-100-02_azuredeploy.json** 을 로드합니다. 
 
-   > **참고**: 템플릿의 내용을 검토하고 Windows Server 2016 데이터 센터를 호스팅하는 Azure VM의 배포를 정의합니다.
+   > **참고**: 템플릿의 내용을 검토하고 Windows Server 2016 데이터 센터를 호스팅하는 Azure VM의 배포를 정의한다는 것을 확인하세요.
 
 1. 템플릿을 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -75,9 +75,9 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. 매개 변수를 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다.
 
-1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용하고 템플릿 배포를 시작합니다.
+1. **사용자 지정 배포** 블레이드에서 다음 설정을 사용해 템플릿 배포를 시작합니다.
 
-    - 구독: 이 랩에서 사용 중인 구독의 이름
+    - 구독: 이 랩에서 사용 중인 구독의 이름.
 
     - 리소스 그룹: **az1000201-RG** 이름으로 새로 만들기
 
@@ -95,27 +95,27 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
    > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)을 참고하십시오.
 
-   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습으로 진행합니다. 이 실습의 두 번째 실습에서 가상 시스템 **az1000201-vm1** 을 사용합니다.
+   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습을 진행합니다. 이 랩의 두 번째 연습에서 가상 머신 **az1000201-vm1**을 사용합니다.
 
-> **결과**: 이 실습을 마친 후에는 이 실습의 두 번째 실습에서 사용할 Azure VM **az1000201-vm1** 의 템플릿 배포를 시작했습니다.
-
-
-### 연습 1: Azure Blob 저장소 구현 및 사용
-
-이 연습의 주요 작업은 다음과 같습니다:
-
-1. Azure Storage 계정 만들기
-
-1. Azure Storage 계정의 구성 설정 검토
-
-1. Azure Storage Blob 서비스 관리
-
-1. Azure Storage 계정 간에 컨테이너 및 Blob 복사
-
-1. SAS(공유 액세스 서명) 키를 사용하여 Blob에 액세스
+> **결과**: 이 랩을 마친 후에는 이 랩의 두 번째 연습에서 사용할 Azure VM **az1000201-vm1**의 템플릿 배포를 시작했습니다.
 
 
-#### 작업 1: Azure Storage 계정 만들기
+### 연습 1: Azure Blob Storage 구현 및 사용.
+
+이 연습의 주요 작업은 다음과 같습니다.
+
+1. Azure Storage 계정 만들기.
+
+1. Azure Storage 계정의 구성 설정 검토.
+
+1. Azure Storage Blob 서비스 관리.
+
+1. Azure Storage 계정 간에 컨테이너 및 Blob 복사.
+
+1. SAS(공유 액세스 서명) 키를 사용하여 BLOB에 액세스.
+
+
+#### 작업 1: Azure Storage 계정 만들기.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -123,9 +123,9 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. 검색 결과 목록을 사용하여 **스토리지 계정 만들기** 블레이드로 이동합니다.
 
-1. **스토리지 계정 만들기** 블레이드에서 다음 설정으로 새 스토리지 계정을 만듭니다: 
+1. **스토리지 계정 만들기** 블레이드에서 다음 설정으로 새 스토리지 계정을 만듭니다. 
 
-    - 구독 : 이전 작업에서 선택한 동일한 구독
+    - 구독: 이전 작업에서 선택한 것과 동일한 구독
 
     - 리소스 그룹: **az1000202-RG** 이름으로 새로 만들기
 
@@ -139,11 +139,11 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
     - 복제: **LRS(로컬 중복 스토리지)**
 
-    - 보안 전송 필요: **비활성화**
+1. **검토 + 만들기**를 클릭한 다음 **만들기**를 클릭합니다.
 
 1. **검토 + 만들기**를 클릭합니다. 그리고 **만들기**를 클릭합니다.
 
-1. 스토리지 계정이 프로비저닝 될 때까지 기다리지 말고 다음 단계로 진행하십시오.
+1. **리소스 생성** 블레이드에서 Azure Marketplace에서 **스토리지 계정**을 검색하세요.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -151,9 +151,9 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. 검색 결과 목록을 사용하여 **스토리지 계정 만들기** 블레이드로 이동합니다.
 
-1. **스토리지 계정 만들기** 블레이드에서 다음 설정으로 새 스토리지 계정을 만듭니다: 
+    - 리소스 그룹: 새 리소스 그룹 **az1000203-RG**의 이름
 
-    - 구독 : 이전 작업에서 선택한 동일한 구독
+    - 스토리지 계정 이름: 소문자와 숫자로 구성된 3~24자 사이의 유효하고 고유한 이름.
 
     - 리소스 그룹: **az1000203-RG** 이름으로 새로 만들기
 
@@ -174,7 +174,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 1. 스토리지 계정이 프로비전될 때까지 기다립니다. 이 작업은 1 분 미만이 소요됩니다.
 
 
-#### 작업 2: Azure Storage 계정의 구성 설정 검토
+#### 작업 2: Azure Storage 계정의 구성 설정 검토.
   
 1. Azure Portal에서 만든 첫 번째 스토리지 계정의 블레이드로 이동합니다. 
 
@@ -201,7 +201,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 1. 스토리지 계정의 **암호화** 블레이드로 이동합니다. 이 경우 암호화도 기본적으로 활성화되어 있으며 사용자 고유의 키를 사용할 수 있습니다.
 
 
-#### 작업 3: Azure Storage Blob 서비스 관리
+#### 작업 3: Azure Storage Blob 서비스 관리.
 
 1. Azure 포털에서 첫 번째 스토리지 계정의 **Blob** 블레이드로 이동합니다. 
 
@@ -210,7 +210,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 1. **az1000202-컨테이너** 블레이드에서 **Labfiles\\Module_03\\Implement_and_Manage_Storage\\az-100-02_azuredeploy.json** 및 **Labfiles\\Module_03\\Implement_and_Manage_Storage\\az-100-02_azuredeploy.parameters.json** 을 컨테이너에 업로드합니다.
 
 
-#### 작업 4: Azure Storage 계정 간에 컨테이너 및 Blob 복사
+#### 작업 4: Azure Storage 계정 간에 컨테이너 및 Blob 복사.
 
 1. Azure 포털의 Cloud Shell 창에서 PowerShell 세션을 시작하십시오. 
 
@@ -260,7 +260,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 1. 두 번째 스토리지 계정의 **Blob** 블레이드로 이동하여 새로 만든 **az1000202-container** 를 확인 하고 컨테이너에 복사된 Blob 두 개가 복사되어 있는지 확인합니다.
 
 
-#### 작업 5: SAS(공유 액세스 서명) 키를 사용하여 Blob에 액세스
+#### 작업 5: SAS(공유 액세스 서명) 키를 사용하여 BLOB에 액세스.
 
 1. 두 번째 스토리지 계정의 **Blob** 블레이드에서 컨테이너 **az1000202-container** 로 이동한 다음 **az-100-02_azuredeploy.json** 블레이드를 엽니다.
 
@@ -274,9 +274,9 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
     - 권한: **읽기**
 
-    - 시작 날짜/시간: 현재 표준 시간대의 현재 날짜/시간 지정
+    - 시작 날짜/시간: 현재 표준 시간대의 현재 날짜/시간 지정.
 
-    - 만료 날짜/시간: 현재 시간보다 24시간 앞선 날짜/시간 지정
+    - 만료 날짜/시간: 현재 시간보다 24시간 앞선 날짜/시간 지정.
 
     - 허용된 IP 주소: 비워 둡니다
 
@@ -284,7 +284,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
     - 서명 키: **키 1**
 
-1. **az-100-02_azuredeploy.json** 블레이드에서 **Blob SAS URL** 을 복사합니다.
+1. **az-100-02_azuredeploy.json** 블레이드에서 **Blob SAS URL**을 복사합니다.
 
 1. 이전에 열려 있는 Microsoft Edge 창에서 이전 단계에서 복사한 URL로 이동합니다. 
 
@@ -295,16 +295,16 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 > **결과**: 이 연습을 완료한 후 두 개의 Azure Storage 계정을 만들고, 구성 설정을 검토하고, Blob 컨테이너를 만들고, 컨테이너에 Blob을 업로드하고, 스토리지 계정 간에 컨테이너 및 Blob을 복사하고, SAS 키를 사용하여 Blob 중 하나에 액세스할 수 있습니다. 
 
 
-### 연습 2: Azure 파일 저장소 구현 및 사용
+### 연습 2: Azure File Storage 구현 및 사용.
 
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
-1. Azure 파일 서비스 공유 만들기
+1. Azure 파일 서비스 공유 만들기.
 
-1. Azure VM에서 드라이브를 Azure 파일 서비스 공유로 매핑
+1. Azure VM에서 드라이브를 Azure 파일 서비스 공유로 매핑.
 
 
-#### 작업 1: Azure 파일 서비스 공유 만들기
+#### 작업 1: Azure 파일 서비스 공유 만들기.
   
 1. Azure 포털에서 이전 연습에서 만든 두 번째 스토리지 계정의 속성을 표시하는 블레이드로 이동합니다.
 
@@ -317,7 +317,7 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
     - 할당량: **5 GB**
 
 
-#### 작업 2: Azure VM에서 드라이브를 Azure 파일 서비스 공유로 매핑
+#### 작업 2: Azure VM에서 드라이브를 Azure 파일 서비스 공유로 매핑.
 
    > **참고**: 이 작업을 시작하기 전에 연습 0에서 시작한 템플릿 배포가 완료되었는지 확인합니다. 
 
@@ -325,9 +325,9 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. **연결** 블레이드에서 Windows 컴퓨터의 파일 공유에 연결하는 PowerShell 명령을 클립보드에 복사합니다.
 
-1. Azure 포털에서 **az1000201-vm1** 블레이드로이동합니다.
+1. Azure Portal에서 **az1000201-vm1** 블레이드로 이동합니다.
 
-1. **az1000201-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다:
+1. **az1000201-vm1** 블레이드에서 RDP 프로토콜을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 
     - 관리자 사용자 이름: **Student**
 
@@ -337,13 +337,20 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 
 1. Windows PowerShell ISE 세션에서 스크립트 창을 열고 로컬 클립보드의 내용을 붙여넣습니다.
 
-1. 스크립트를 실행하고 출력이 Z: 드라이브를 Azure 저장소 파일 서비스 공유로 성공적으로 매핑했는지 확인합니다.
+1. 스크립트를 PowerShell ISE 세션에 붙여 넣고 스크립트 끝에``-Persist``를 추가하고 스크립트를 실행한 다음 해당 출력이 Z: 드라이브를 Azure Storage File Service 공유에 성공적으로 매핑했는지 확인합니다.
 
-1. 파일 탐색기를 시작하고 Z로 이동합니다. **Folder1** 이란 이름의 폴더를 만듭니다.
+1. 시작 메뉴를 마우스 오른쪽 단추로 클릭하고 **실행**을 클릭한 다음, **열기** 대화 상자에서 **Z:**를 입력하고 **Enter** 키를 누릅니다. 그러면 파일 탐색기 창에 **Z:** 드라이브의 내용이 표시됩니다.
+1. File Explorer 창에서 Z: 드라이브에 **Folder1** 라는 이름의 폴더를 만듭니다.
 
-1. 파일 탐색기 창에서 **Folder1** 로 이동하여 **File1.txt** 라는 텍스트 문서를 만듭니다. 
+1. 파일 탐색기 창에서 **Folder1**로 이동하여 **File1.txt**라는 텍스트 문서를 만듭니다. 
 
-   > **참고**: **File1.txt.txt** 라는 파일을 만들지 않도록 알려진 파일 확장명이 표시되지 않는 파일 탐색기의 기본 구성을 고려해야 합니다.
+   > **참고**: **File1.txt.txt**라는 파일을 만들지 않도록 알려진 파일 확장명이 표시되지 않는 파일 탐색기의 기본 구성을 고려해야 합니다.
+
+1. PowerShell 프롬프트에서 컨텍스트를 매핑된 드라이브로 변경하려면 **Z:** 디렉터리 입력합니다. 
+
+1. PowerShell 프롬프트에서 드라이브의 콘텐츠를 나열하려면 **dir**을 입력합니다. 파일 탐색기에서 만든 디렉터리가 표시됩니다.
+
+1. PowerShell 프롬프트에서 **cd Folder1**을 입력하여 디렉터리를 폴더로 변경합니다. **dir** 명령을 다시 실행하여 파일 콘텐츠를 나열합니다.
 
 1. PowerShell 프롬프트에서 **Z:**를 입력하고 엔터를 눌러 매핑된 드라이브를 변경한다.
 
@@ -381,3 +388,4 @@ Adatum Corporation은 데이터를 호스팅하기 위해 Azure 스토리지를 
 1. **Cloud Shell** 명령 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 이 랩에서 사용된 리소스 그룹을 제거했습니다.
+

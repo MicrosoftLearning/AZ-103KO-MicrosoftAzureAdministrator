@@ -1,12 +1,13 @@
 ---
 lab:
     title: 'Azure AD ID 보호 구현 및 유효성 검사'
+
     module: '모듈 10 - 보안 신원'
 ---
 
-# 랩: Azure AD ID 보호 구현 및 유효성 검사
+# 랩: Azure AD ID 보호
 
-Azure VM에 대한 원격 데스크톱 세션에서 수행하는 연습 2의 단계를 제외하고, 이 랩의 모든 과제는 Azure 포털에서 수행합니다.
+Azure VM에 대한 원격 데스크톱 세션에서 수행하는 연습 2의 단계를 제외하고, 이 랩의 모든 과제는 Azure Portal에서 수행합니다.
 
 랩 파일:
 
@@ -21,7 +22,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
 -  Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
 
@@ -32,7 +33,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 ### 연습 0: 랩 환경 준비
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
 1. Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
 
@@ -77,16 +78,16 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
     - Virtual Network Name: **az1010401b-vnet1**
 
-   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)를 참고하십시오.
 
    > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 연습으로 진행합니다. 이 랩의 마지막 연습에서 이 배포에 포함된 가상 머신를 사용합니다.
 
-> **결과**: 이 연습을 완료한 후 이 랩의 다음 연습에서 사용할 Azure VM **az1010401b-vm1** 의 템플릿 배포를 시작했습니다.
+> **결과**: 이 연습을 완료한 후 이 랩의 다음 연습에서 사용할 Azure VM **az1010401b-vm1**의 템플릿 배포를 시작했습니다.
 
 
 ### 연습 1: Azure MFA 구현
 
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
 1. 새 Azure AD 테넌트 만들기
 
@@ -122,13 +123,13 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 #### 작업 2: Azure AD Premium v2 평가판 활성화
 
-1. Azure 포털에서 **디렉터리 + 구독** 필터를 새로 만든 AzureAD 테넌트에 설정합니다.
+1. Azure Portal에서 **디렉터리 + 구독** 필터를 새로 만든 AzureAD 테넌트에 설정합니다.
 
-   > **참고**: **디렉터리 + 구독** 필터는 Azure 포털의 도구 모음에서 클라우드 셸 아이콘의 오른쪽에 나타납니다 
+   > **참고**: **디렉터리 + 구독** 필터는 Azure Portal의 도구 모음에서 Cloud Shell 아이콘의 오른쪽에 나타납니다. 
 
-   > **참고**: **AdatumLab101-4b** 항목이 **디렉터리 + 구독** 필터 목록에 나타나지 않으면 브라우저 창을 새로 고쳐야 할 수 있습니다. 
+   > **참고**: **AdatumLab101-4b** 항목이 **디렉터리 + 구독** 필터 목록에 나타나지 않으면 브라우저 창을 새로 고쳐야 할 수 있습니다.
 
-1. Azure 포털에서 **AdatumLab101-4b - 개요** 블레이드로 이동합니다. 
+1. Azure Portal에서 **AdatumLab101-4b - 개요** 블레이드로 이동합니다.
 
 1. **AdatumLab101-4b - 개요** 블레이드에서 **라이선스 - 개요** 블레이드로 이동합니다.
 
@@ -139,9 +140,9 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 #### 작업 3: Azure AD 사용자 및 그룹을 만듭니다.
 
-1. Azure 포털에서 AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
+1. Azure Portal에서 AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
 
-1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다: 
+1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다.
 
     - 이름: **aaduser1**
 
@@ -159,7 +160,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
     - 암호: **암호 표시** 확인란을 선택하고 **암호** 텍스트 상자에 나타나는 문자열을 기록합니다. 나중에 이 랩에서 필요할 것입니다.
 
-1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다:
+1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다.
 
     - 이름: **aaduser2**
 
@@ -201,7 +202,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 #### 작업 5: Azure MFA 설정을 구성합니다.
 
-1. Azure 포털에서 AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
+1. Azure Portal에서 AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드로 이동합니다.
 
 1. AdatumLab101-4b Azure AD 테넌트의 **사용자 - 모든 사용자** 블레이드에서 **Multi-Factor Authentication** 링크를 사용하여 **다단계 인증** 포털을 엽니다. 
 
@@ -229,6 +230,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. **Multi-Factor Authentication - 시작** 블레이드에서 **Multi-Factor Authentication - 사기 행위 경고** 블레이드로 이동하여 다음 설정을 구성합니다:
 
+
     - 사용자가 사기 경고를 제출할 수 있도록 허용: **설정**
 
     - 사기 행위를 보고하는 사용자 자동 차단: **설정**
@@ -240,7 +242,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. 새 InPrivate Microsoft Edge 창을 엽니다.
 
-1. 새 브라우저 창에서 Azure 포털로 이동하고 **aaduser1** 사용자 계정을 사용하여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
+1. 새 브라우저 창에서 Azure Portal로 이동하고 **aaduser1**사용자 계정을 사용하여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
 
    > **참고**: 이 실습의 앞에서 설명한 대로 AzureAD 테넌트 DNS 도메인 이름을 포함하여 **aaduser1** 사용자 계정의 정규화된 이름을 제공해야 합니다.
 
@@ -265,7 +267,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 ### 연습 2: Azure AD ID 보호 구현:
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
 1. Azure AD ID 보호 사용
 
@@ -280,7 +282,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)의 Azure 포털을 탐색하고 **AdatumLab101-4b** Azure AD 테넌트를 만드는데 사용한 Microsoft 계정을 사용하여 로그인합니다. 
 
-   > **참고**: **AdatumLab101-4b** Azure AD 테넌트에 로그인되어 있는지 확인합니다. **디렉터리 + 구독** 필터를 사용하여 Azure AD 테넌트 간에 전환할 수 있습니다. 
+   > **참고**: **AdatumLab101-4b**Azure AD 테넌트에 로그인되어 있는지 확인합니다. **디렉터리 + 구독** 필터를 사용하여 Azure AD 테넌트 간에 전환할 수 있습니다. 
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -341,7 +343,9 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
    > **참고**: 이 작업을 시작하기 전에 연습 0에서 시작한 템플릿 배포가 완료되었는지 확인합니다. 
 
-1. Azure 포털에서 **az1010401b-vm1** 블레이드로 이동합니다.
+1. Azure Portal에서 **디렉터리 + 구독** 필터를 기본 Azure AD 테넌트에 설정합니다.
+
+1. Azure Portal에서 **az1010401b-vm1** 블레이드로 이동합니다.
 
 1. **az1010401b-vm1** 블레이드에서원격 데스크톱 세션을 통해 Azure VM에 연결하고 로그인하라는 메시지가 표시되면 다음 자격 증명을 제공합니다.
 
@@ -355,11 +359,11 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. 원격 데스크톱 세션 내에서 InPrivate Internet Explorer 창을 엽니다.
 
-1. 새 브라우저 창에서 [**https://www.torproject.org/projects/torbrowser.html.en**](https://www.torproject.org/projects/torbrowser.html.en)에서 ToR 브라우저 프로젝트로 이동하여 ToR 브라우저를 다운로드하고 기본 옵션으로 설치합니다.
+1. 새 브라우저 창에서 [**https://www.torproject.org/projects/torbrowser.html.en**](https://www.torproject.org/projects/torbrowser.html.en) 에서 ToR 브라우저 프로젝트로 이동하여 ToR 브라우저를 다운로드하고 기본 옵션으로 설치합니다.
 
 1. 설치가 완료되면 ToR 브라우저를 시작하고 초기 페이지에서 **연결** 옵션을 사용하고 [**https://myapps.microsoft.com**](https://myapps.microsoft.com)에서 응용 프로그램 액세스 패널로 이동합니다.
 
-1. 메시지가 표시되면 이전 연습에서 만든 **aaduser2** 계정으로 로그인합니다.
+1. 메시지가 표시되면 이전 연습에서 만든 **aaduser2**계정으로 로그인합니다.
 
 1. **로그인이 차단되었음** 이라는 메시지가 표시됩니다. 이 계정은 ToR 브라우저 사용과 관련된 로그인 위험이 증가하여 필요한 MFA가 구성되지 않았기 때문에 이 문제가 예상됩니다.
 
@@ -367,7 +371,7 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 
 1. 이번에는 **의심스러운 활동 감지 메시지가 표시됩니다.** 이 계정은 다중 요소 인증으로 구성되므로 다시 한 번 이 문제가 예상됩니다. ToR 브라우저 사용과 관련된 로그인 위험이 증가하는 것을 고려하면 이전 작업에서 구성한 로그인 위험 정책에 따라 다단계 인증을 사용해야 합니다.
 
-1. 확인 옵션을 사용하여 텍스트 또는 통화를 통해 신원을 **확인** 할지 여부를 지정합니다. 
+1. 확인 옵션을 사용하여 텍스트 또는 통화를 통해 신원을**확인**할지 여부를 지정합니다. 
 
 1. 확인을 완료하고 응용프로그램 액세스 패널에 성공적으로 로그인 되었는지 확인합니다.
 
@@ -409,3 +413,4 @@ Adatum Corporation은 ID 보호를 위해 Azure AD Premium 기능을 활용하�
 1. **Cloud Shell** 명령 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 이 랩에서 사용된 리소스 그룹을 제거했습니다.
+

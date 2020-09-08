@@ -6,7 +6,7 @@ lab:
 
 # 랩: Azure 지역 간에 Site Resovert 자격 증명 구현
 
-이 랩의 모든 작업은 Azure 포털에서 수행됩니다
+이 랩의 모든 작업은 Azure Portal에서 수행됩니다.
 
 랩 파일: 
 
@@ -21,7 +21,7 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 랩을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
 -  Azure Site Resovert 자격 증명 구현
 
@@ -34,12 +34,12 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
 1. Azure Resource Manager 템플릿을 사용하여 마이그레이션 할 Azure VM 배포
 
-1. Azure 복구 서비스 자격 증명 모음 만들기
+1. Azure Site Recovery Services 자격 증명 모음 만들기
   
 
 #### 작업 1: Azure Resource Manager 템플릿을 사용하여 마이그레이션 할 Azure VM 배포
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com)에서 Azure Portal을 살펴봅니다. 그리고 이 랩에서 사용하려는 Azure 구독의 owner 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -51,7 +51,7 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
 1. **템플릿 편집** 블레이드에서 템플릿 파일인 **Labfiles\\Module_07\\Azure_Site_Recovery_Between_Regions\\az-101-01_azuredeploy.json** 을 로드합니다. 
 
-   > **참고**: 템플릿의 내용을 검토하고 Windows Server 2016 데이터 센터를 호스팅하는 Azure VM의 배포를 정의합니다.
+   > **참고**: 템플릿의 내용을 검토하고 Windows Server 2016 데이터 센터를 호스팅하는 Azure VM의 배포를 정의한다는 것을 확인하세요.
 
 1. 템플릿을 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -63,7 +63,7 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
 1. **사용자 지정 배포** 블레이드에서 다음을 사용하여 템플릿 배포를 시작합니다.
 
-    - 구독: 이 랩에서 사용 중인 구독의 이름
+    - 구독: 이 랩에서 사용 중인 구독의 이름.
 
     - 리소스 그룹: **az1010101-RG** 이름으로 새로 만들기
 
@@ -83,9 +83,9 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
     - Vm Size: **Standard_DS1_v2**
 
-   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)을 참고하십시오.
 
-   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 작업으로 진행합니다. 이 실습의 두 번째 실습에서 가상 시스템 **az1010101-vm** 을 사용합니다.
+   > **참고**: 배포가 완료될 때까지 기다리지 말고 다음 작업을 진행합니다. 이 랩의 두 번째 연습에서 가상 머신 **az1010101-vm**을 사용합니다.
 
 
 #### 작업 2: Site Resovert 자격 증명 모음 구현
@@ -120,7 +120,7 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
 #### 작업 1: Azure VM 복제 구성
 
-   > **참고**: 이 타스크를 시작하기 전에 첫 번째 실습에서 시작한 템플리트 전개가 완료되었는지 확인하십시오. 
+   > **참고**: 이 작업을 시작하기 전에 첫 번째 연습에서 시작한 템플릿 배포가 완료되었는지 확인하십시오. 
 
 1. Azure 포털에서 새로 제공된 Azure Recovery Services 자격 증명 **vaultaz1010102** 의 블레이드로 이동합니다.
 
@@ -128,9 +128,9 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
     - 소스: **Azure**
 
-    - 원본 위치: 이 랩의 이전 연습에서 Azure VM을 배포한 동일한 Azure 지역
+    - 원본 위치: 이 랩의 이전 연습에서 Azure VM을 배포한 곳과 동일한 Azure 지역
 
-    - Azure 가상 시스템 배포 모델: **Resource Manager**
+    - Azure 가상 머신 배포 모델: **Resource Manager**
 
     - 원본 구독 :이 실습의 이전 실습에서 사용한 것과 동일한 Azure 구독
 
@@ -152,9 +152,9 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 
     - 복제 정책: 새 복제 정책의 이름 **12-hour-retention-policy**
 
-    - 복구 지점 보존: **12 시간**
+    - 복구 지점 재방문 주기: **12시간**
 
-    - 앱 일관된 스냅샷 빈도: **6 시간**
+    - 일관성 있는 앱 스냅샷 빈도: **6시간**
 
     - 다중 VM 일관성: **아니요**
 
@@ -209,6 +209,7 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
    ```
 
    > **참고**: "...cannot perform delete operation because following scope(s) are locked..."와 유사한 오류가 발생하면 다음 단계를 실행하여 삭제를 막는 리소스의 잠금을 제거해야 합니다.:
+
    > ```sh
    > lockedresource=$(az resource list --resource-group az1010101-RG-asr --resource-type Microsoft.Compute/disks --query "[?starts_with(name,'az10101')].name" --output tsv)
    > az disk revoke-access -n $lockedresource --resource-group az1010101-RG-asr
@@ -220,3 +221,4 @@ Adatum Corporation은 Site Resovert 자격 증명를 구현하여 지역간 Azur
 1. **Cloud Shell** 명령 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 이 랩에서 사용된 리소스 그룹을 제거했습니다.
+

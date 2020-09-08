@@ -2,13 +2,15 @@
 lab:
     title: '가상 머신 배포 및 관리'
     module: '모듈 02 - Azure 가상 머신'
+
 ---
 
-# 랩: 가상 머신 배포 및 관리
+# 랩: 가상 머신 배포 및 관리.
+
 
 이 랩의 모든 작업은 원격 데스크톱 세션에서 Azure VM에 수행된 단계를 포함하는 연습 2 작업 2 와 연습 2 작업 3을 제외한 Azure 포털(PowerShell Cloud Shell 세션 포함)에서 수행됩니다.
 
-   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 머신에 Azure PowerShell 모듈이 설치되어 있어야 합니다. [**https://docs.microsoft.com/ko-kr/powershell/azure/azurerm/install-azurerm-ps**](https://docs.microsoft.com/ko-kr/powershell/azure/azurerm/install-azurerm-ps)
+   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 머신에 Azure PowerShell 모듈이 설치되어 있어야 합니다. [**https://docs.microsoft.com/ko-kr/powershell/azure/install-Az-ps**](https://docs.microsoft.com/ko-kr/powershell/azure/install-Az-ps)
 
 랩 파일: 
 
@@ -20,32 +22,36 @@ lab:
 
 ### 시나리오
   
+
 Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사용하여 워크로드를 구현하려고 합니다.
 
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 랩을 완료하면 다음과 같은 역량을 갖추게 됩니다.
+
 
 -  Azure 포털, Azure PowerShell 및 Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
 
--  Windows 및 Linux 운영 체제를 실행하는 Azure VM의 네트워킹 설정 구성
+-  Windows 및 Linux 운영 체제를 실행하는 Azure VM의 네트워킹 설정 구성.
 
--  Azure VM 스케일 세트 배포 및 구성
+-  Azure VM Scale Sets 배포 및 구성.
 
 
 ### 연습 1: Azure 포털, Azure PowerShell 및 Azure Resource Manager 템플릿을 사용하여 Azure VM 배포
-  
-이 연습의 주요 작업은 다음과 같습니다:
 
-1. Windows Server 2016 데이터 센터를 실행하는 Azure VM을 Azure 포털을 사용하여 가용성 집합에 배포합니다
 
-1. Azure PowerShell을 사용하여 Windows Server 2016 데이터 센터를 실행하는 Azure VM을 기존 가용성 집합에 배포합니다
+이 연습의 주요 작업은 다음과 같습니다.
+
+1. Windows Server 2016 Datacenter를 실행하는 Azure VM을 Azure Portal을 사용하여 가용성 집합에 배포합니다.
+
+1. Azure PowerShell을 사용하여 Windows Server 2016 Datacenter를 실행하는 Azure VM을 기존 가용성 집합에 배포합니다.
 
 1. Azure Resource Manager 템플릿을 사용하여 Linux를 실행하는 두 개의 Azure VM을 가용성 집합에 배포합니다
 
 
-#### 작업 1: Windows Server 2016 데이터 센터를 실행하는 Azure VM을 Azure 포털을 사용하여 가용성 집합에 배포합니다
+#### 작업 1: Windows Server 2016 Datacenter를 실행하는 Azure VM을 Azure Portal을 사용하여 가용성 집합에 배포합니다.
+
 
 1. 랩 가상 머신에서 Microsoft Edge를 시작하고 [**http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 탐색하여 이 랩에서 사용하려는 Azure 구독에서 소유자 역할이 있는 Microsoft 계정을 사용하여 로그인합니다.
 
@@ -57,13 +63,15 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **가상 머신 만들기**블레이드에서 다음 설정을 사용하여 가상 머신를 배포합니다.
 
-    - 구독: 이 랩에서 사용 중인 구독의 이름
+    - 구독: 이 랩에서 사용 중인 구독의 이름.
 
     - 리소스 그룹: **az1000301-RG** 이름으로 새로 만들기
 
     - 가상 머신 이름: **az1000301-vm0**
 
-    - 지역: 랩 위치에 가장 가깝고 Azure VM을 프로비전할 수 있는 Azure 지역의 이름입니다.
+    - 지역: **(미국) 미국 동부** (또는 가까운 지역)
+
+      > **참고**: Azure VM을 프로비전할 수 있는 Azure 지역을 확인하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)을 참고하십시오.
 
     - 가용성 옵션: **가용성 집합**
 
@@ -83,7 +91,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **다음: 디스크 >**를 클릭한다.
 
-    - OS 디스크 유형: **표준 HDD**
+1. **다음: 디스크 >**를 클릭합니다.    
 
 1. **다음: 네트워킹 >**을 클릭한다.
 
@@ -97,7 +105,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
         - 서브넷 이름: **subnet0**
 
-        - 서브넷 주소 범위: **10.103.0.0/24**
+    - 가상 네트워크 주소 범위: **10.103.0.0/16**
 
     - 공용 IP: **새로 만들기**를 클릭한다.
 
@@ -105,7 +113,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
     - NIC 네트워크 보안 그룹: **기본**
 
-    - 공용 인바운드 포트: **없음**
+1. **확인**을 클릭합니다.
 
     - 가속화된 네트워킹: **꺼짐**
 
@@ -129,7 +137,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
    > **참고**: 이 랩의 두 번째 연습에서는 이 작업에서 만든 네트워크 보안 그룹을 구성합니다.
 
-   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5 분이 소요됩니다.
+   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5분이 소요됩니다.
 
 
 #### 작업 2: Azure PowerShell을 사용하여 Windows Server 2016 데이터 센터를 실행하는 Azure VM을 기존 가용성 집합에 배포합니다.
@@ -152,7 +160,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    ```pwsh
    $resourceGroup = Get-AzResourceGroup -Name 'az1000301-RG'
    $location = $resourceGroup.Location
-   ```
+```
 
    > **참고**: 이러한 명령은 대상 리소스 그룹과 해당 위치를 지정하는 변수의 값을 설정합니다.
 
@@ -160,9 +168,9 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
    ```pwsh
    $availabilitySet = Get-AzAvailabilitySet -ResourceGroupName $resourceGroup.ResourceGroupName -Name 'az1000301-avset0'
-   $vnet = Get-AzVirtualNetwork -Name 'az1000301-vnet0' -ResourceGroupName $resourceGroup.ResourceGroupName
+   $vnet = Get-AzVirtualNetwork -Name 'az1000301-RG-vnet' -ResourceGroupName $resourceGroup.ResourceGroupName
    $subnetid = (Get-AzVirtualNetworkSubnetConfig -Name 'subnet0' -VirtualNetwork $vnet).Id
-   ```
+```
 
    > **참고**: 이러한 명령은 새 Azure VM을 배포할 가용성 집합, 가상 네트워크 및 서브넷을 지정하는 변수값을 설정합니다.
 
@@ -172,9 +180,9 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    $nsg = New-AzNetworkSecurityGroup -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -Name "$vmName-nsg"
    $pip = New-AzPublicIpAddress -Name "$vmName-ip" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -AllocationMethod Dynamic 
    $nic = New-AzNetworkInterface -Name "$($vmName)$(Get-Random)" -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -SubnetId $subnetid -PublicIpAddressId $pip.Id -NetworkSecurityGroupId $nsg.Id
-   ```
+```
 
-   > **참고**: 이러한 명령은 새 Azure VM에서 사용할 새 네트워크 보안 그룹, 공용 IP 주소 및 네트워크 인터페이스를 만듭니다
+   > **참고**: 이러한 명령은 새 Azure VM에서 사용할 새 네트워크 보안 그룹, 공용 IP 주소 및 네트워크 인터페이스를 만듭니다.
 
    > **참고**: 이 랩의 두 번째 연습에서는 이 작업에서 만든 네트워크 보안 그룹을 구성합니다.
 
@@ -184,7 +192,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    $adminUsername = 'Student'
    $adminPassword = 'Pa55w.rd1234'
    $adminCreds = New-Object PSCredential $adminUsername, ($adminPassword | ConvertTo-SecureString -AsPlainText -Force)
-   ```
+```
 
    > **참고**: 이러한 명령은 새 Azure VM의 로컬 관리자 계정의 자격 증명을 지정하는 변수의 값을 설정합니다.
 
@@ -194,7 +202,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    $publisherName = 'MicrosoftWindowsServer'
    $offerName = 'WindowsServer'
    $skuName = '2016-Datacenter'
-   ```
+```
 
    > **참고**: 이러한 명령은 새 Azure VM을 프로비전하는 데 사용할 Azure Marketplace 이미지의 속성을 지정하는 변수값을 설정합니다.
 
@@ -215,15 +223,15 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    Set-AzVMSourceImage -VM $vmConfig -PublisherName $publisherName -Offer $offerName -Skus $skuName -Version 'latest'
    Set-AzVMOSDisk -VM $vmConfig -Name "$($vmName)_OsDisk_1_$(Get-Random)" -StorageAccountType $osDiskType -CreateOption fromImage
    Set-AzVMBootDiagnostic -VM $vmConfig -Disable
-   ```
+```
 
-   > **참고**: 이들 명령은 VM 크기, VM의 가용성 집합, 네트워크 인터페이스, 컴퓨터 이름, 로컬 관리자 자격 증명, 원본 이미지, 운영 체제 디스크, 부팅 진단 설정 등, 새 Azure VM을 프로비전하는 데 사용되는 Azure VM 구성 개체의 속성을 설정합니다.
+   > **참고**: 이 명령은 VM 크기, VM의 가용성 집합, 네트워크 인터페이스, 컴퓨터 이름, 로컬 관리자 자격 증명, 원본 이미지, 운영 체제 디스크, 부팅 진단 설정 등, 새 Azure VM을 프로비전하는 데 사용되는 Azure VM 구성 개체의 속성을 설정합니다.
 
 1. Cloud Shell 창에서 다음 명령을 실행합니다:
 
    ```pwsh
    New-AzVM -ResourceGroupName $resourceGroup.ResourceGroupName -Location $location -VM $vmConfig
-   ```
+```
 
    > **참고**: 이 명령은 새 Azure VM의 배포를 시작합니다.
 
@@ -242,7 +250,9 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **템플릿 편집** 블레이드에서 템플릿 파일인 **Labfiles\\Module_02\\Deploy_and_Manage_Virtual_Machines\\az-100-03_azuredeploy.json** 을 로드합니다.
 
-   > **참고**: 템플릿의 내용을 검토하고 Linux Ubuntu를 호스팅하는 두 개의 Azure VM을 가용성 집합으로 기존 가상 네트워크 **az1000301-vnet0** 에 배포하도록 정의합니다.
+1. **편집 템플릿** 블레이드에서 템플릿 파일 **Labfiles\\Module_02\\Deploy_and_Manage_Virtual_Machines\\az-100-03_azuredeploy.json** 을 로드합니다. 
+
+   > **참고**: 템플릿의 내용을 검토하고 Linux Ubuntu를 호스팅하는 두 개의 Azure VM을 가용성 집합으로 기존 가상 네트워크 **az1000301-vnet0** 에 배포하도록 정의합니다. 이 가상 네트워크는 현재 배포에 없습니다. 아래 매개 변수에서 가상 네트워크 이름을 변경할 예정입니다.
 
 1. 템플릿을 저장하고 **사용자 지정 배포** 블레이드로 돌아갑니다. 
 
@@ -254,7 +264,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **사용자 지정 배포** 블레이드에서 다음을 사용하여 템플릿 배포를 시작합니다.
 
-    - 구독: 이 랩에서 사용 중인 구독의 이름
+    - 구독: 이 랩에서 사용 중인 구독의 이름.
 
     - 리소스 그룹: **az1000302-RG** 이름으로 새로 만들기
 
@@ -280,25 +290,29 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
     - Vm Size: **Standard_DS2_v2**
 
-   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5 분이 소요됩니다.
+   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5분이 소요됩니다.
 
-> **결과**: 이 연습을 완료한 후 Windows Server 2016 데이터 센터를 실행하는 Azure VM을 Azure 포털을 사용하여 가용성 집합에 배포하고, Windows Server 2016 데이터 센터를 실행하는 다른 Azure VM을 Azure PowerShell를 사용하여 동일한 가용성 집합에 배포했습니다. 그리고 Azure Resource Manager 템플릿을 사용하여 가용성 집합에 우분투 리눅스를 실행 하는 두 개의 Azure VM을 배포 했습니다.
+   > **결과**: 이 연습을 완료한 후 Windows Server 2016 데이터 센터를 실행하는 Azure VM을 Azure 포털을 사용하여 가용성 집합에 배포하고, Windows Server 2016 데이터 센터를 실행하는 다른 Azure VM을 Azure PowerShell를 사용하여 동일한 가용성 집합에 배포했습니다. 그리고 Azure Resource Manager 템플릿을 사용하여 가용성 집합에 우분투 리눅스를 실행 하는 두 개의 Azure VM을 배포 했습니다.
 
    > **참고**: 템플릿을 사용하여 Windows Server 2016 데이터 센터를 호스팅하는 두 개의 Azure VM을 단일 작업에 배포할 수 있습니다(Linux Ubuntu 서버를 호스팅하는 두 개의 Azure VM을 배포한 것 처럼). 이러한 Azure VM을 두 개의 별도 작업에 배포하는 이유는 Azure Portal 및 Azure PowerShell 기반 배포에 익숙해질 수 있는 기회를 제공하기 위해서 입니다.
 
 
-### 연습 2: Windows 및 Linux 운영 체제를 실행하는 Azure VM의 네트워킹 설정 구성
+### 연습 2: Windows 및 Linux 운영 체제를 실행하는 Azure VM의 네트워킹 설정 구성.
   
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
-1. Azure VM의 정적 개인 및 공용 IP 주소 구성
+1. Azure VM의 정적 개인 및 공용 IP 주소 구성.
 
-1. 공용 IP 주소를 통해 Windows Server 2016 데이터 센터를 실행하는 Azure VM에 연결
+1. 공용 IP 주소를 통해 Windows Server 2016 Datacenter를 실행하는 Azure VM에 연결.
+
+1. 개인 IP 주소를 통해 Linux Ubuntu 서버를 실행하는 Azure VM에 연결.
+
 
 1. 사설 IP 주소를 통해 리눅스 우분투 서버를 실행 하는 Azure VM에 연결
 
+1. Azure Portal에서 **az1000301-vm0** 블레이드로 이동합니다.
 
-#### 작업 1: Azure VM의 정적 개인 및 공용 IP 주소 구성
+1. **az1000301-vm0** 블레이드에서 **네트워킹** 블레이드로 이동하여 네트워크 인터페이스에 할당된 공용 IP 주소 **az1000301-vm0-ip** 의 구성을 표시합니다.
 
 1. Azure 포털에서 **az1000301-vm0** 블레이드로 이동합니다.
 
@@ -320,7 +334,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **az1000302-vm0** 의 네트워크 인터페이스의 속성을 표시하는 블레이드에서 **IP 구성** 블레이드로 이동합니다.
 
-1. **az1000302-vm0** 의 네트워크 인터페이스의 속성을 표시하는 블레이드에서 **ipconfig1** 블레이드로 이동합니다.
+1. **az1000302-vm0** 의 네트워크 인터페이스의 속성을 표시하는 블레이드에서 **IP 구성** 블레이드로 이동합니다.
 
 1. **IP 구성** 블레이드가 뜨면 **ipconfig1**의 사설 IP 주소 할당을 정적으로 구성하고 **10.103.0.100** 으로 설정합니다. 그리고 **저장**을 클릭합니다.
 
@@ -329,7 +343,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
    > **참고**: 정적 또는 동적으로 할당된 공용 및 사설 IP 주소를 통해 Azure VM에 연결할 수 있습니다. 정적 IP 할당 선택은 일반적으로 이러한 IP 주소가 IP 필터링, 라우팅과 함께 사용되거나 DNS 서버로 작동하는 Azure VM의 네트워크 인터페이스에 할당되는 시나리오에서 수행됩니다.
 
 
-#### 작업 2: 공용 IP 주소를 통해 Windows Server 2016 데이터 센터를 실행하는 Azure VM에 연결
+#### 작업 2: 공용 IP 주소를 통해 Windows Server 2016 Datacenter를 실행하는 Azure VM에 연결.
 
 1. Azure 포털에서 **az1000301-vm0** 블레이드로 이동합니다.
 
@@ -374,13 +388,13 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. 명령 프롬프트에서 다음을 실행합니다.
 
-   ```
+```
    nslookup az1000302-vm0
-   ```
+```
 
 1. 출력된 값을 확인하면 이 연습의 첫 번째 작업에서 할당한 IP 주소로 이름이 확인됩니다(**10.103.0.100**).
 
-   > **참고**: 예상되는 상황입니다. Azure는 가상 네트워크 내에서 기본 제공 DNS 이름 확인을 제공합니다. 
+   > **참고**: 예상되던 상황입니다. Azure는 가상 네트워크 내에서 기본 제공 DNS 이름 확인을 제공합니다. 
 
 1. **az1000301-vm0**의 RDP 세션 내의 서버 관리자에서 **로컬 서버**를 클릭하고 **IE 강화 보안 구성** 을 사용하지 않도록 설정합니다.
 
@@ -388,7 +402,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
 1. **putty.exe** 를 사용하여 **SSH** 프로토콜(TCP 22)을 통해 사설 IP 주소에서 **az1000302-vm0** 에 성공적으로 연결할 수 있는지 확인합니다.
 
-1. 메시지가 표시되면 다음 값을 지정하여 인증합니다:
+1. 메시지가 표시되면 다음 값을 지정하여 인증합니다.
 
     - 사용자 이름: **Student**
 
@@ -407,18 +421,18 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 > **결과**: 이 연습을 완료한 후 Azure VM의 정적 사설 및 공용 IP 주소를 구성하고 공용 IP 주소를 통해 Windows Server 2016 데이터 센터를 실행하는 Azure VM에 연결하고 사설 IP 주소를 통해 Linux Ubuntu 서버를 실행하는 Azure VM에 연결했습니다.
 
 
-### 연습 3: Azure VM 스케일 세트 배포 및 구성
+### 연습 3: Azure VM Scale Sets 배포 및 구성
 
-이 연습의 주요 작업은 다음과 같습니다:
+이 연습의 주요 작업은 다음과 같습니다.
 
-1. Azure VM 스케일 집합 배포에 사용할 수 있는 DNS 이름 식별
+1. Azure VM 확장 집합 배포에 사용할 수 있는 DNS 이름 식별.
 
-1. Azure VM 스케일 세트 배포
+1. Azure VM 확장 집합 배포.
 
-1. DSC 확장을 사용하여 스케일 세트 VM에 IIS 설치
+1. DSC 확장을 사용하여 확장 집합 VM에 IIS 설치.
 
 
-#### 작업 1: Azure VM 스케일 집합 배포에 사용할 수 있는 DNS 이름 식별
+#### 작업 1: Azure VM 확장 집합 배포에 사용할 수 있는 DNS 이름 식별.
 
 1. Azure 포털의 Cloud Shell 창에서 PowerShell 세션을 시작하십시오. 
 
@@ -434,7 +448,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 1. 성공적인 결과가 출력된 &lt;custom-label&gt;를 별도로 메모합니다. 다음 작업에 필요합니다.
 
 
-#### 작업 2: Azure VM 스케일 세트 배포
+#### 작업 2: Azure VM 확장 집합 배포.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -466,7 +480,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
     - 낮은 우선 순위로 배포: **아니요**
 
-    - 관리 디스크 사용: **예**
+    - Managed Disks 사용: **예**
 
     - 자동 크기 조정: **사용 안 함**
 
@@ -480,7 +494,7 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
     
         - 이름: **az1000303-vnet0**
 
-        - 주소 공간: **10.203.0.0/16**
+        - 주소 범위: **10.203.0.0/16**
 
         - 서브넷 이름: **subnet0**
 
@@ -488,10 +502,10 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
     - 인스턴스당 공용 IP 주소: **끄기**
 
-   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5 분이 소요됩니다.
+   > **참고**: 다음 작업을 진행하기 전에 배포가 완료될 때까지 기다립니다. 약 5분이 소요됩니다.
 
 
-#### 작업 3: DSC 확장을 사용하여 스케일 세트 VM에 IIS 설치
+#### 작업 3: DSC 확장을 사용하여 확장 집합 VM에 IIS 설치.
 
 1. Azure 포털에서 **az1000303vms0** 블레이드로 이동합니다.
 
@@ -517,11 +531,11 @@ Adatum Corporation은 Azure 가상 머신(VM) 및 Azure VM 확장 집합을 사�
 
     - Auto Upgrade Minor Version: **Yes**
 
-1. **az1000303vms0 - 인스턴스** 블레이드로 이동하여 **az1000303vmss0_0** 인스턴스의 업그레이드를 시작합니다.
+1. **az1000303vms0 - 인스턴스** 블레이드로 이동하여 **az1000303vmss0_0** 인스턴스의 **업그레이드를** 시작합니다.
 
-   > **참고**: 이 업데이트는 DSC 구성 스크립트의 응용 프로그램을 트리거합니다. 업그레이드가 완료될 때까지 기다립니다. 약 5 분이 소요됩니다. **az1000303vms0 - 인스턴스** 블레이드에서 진행 상황을 모니터링할 수 있습니다. 
+   > **참고**: 이 업데이트는 DSC 구성 스크립트의 응용 프로그램을 트리거합니다. 업그레이드가 완료될 때까지 기다립니다. 약 5분이 소요됩니다. **az1000303vms0 - 인스턴스** 블레이드에서 진행 상황을 모니터링할 수 있습니다.
 
-1. 업그레이드가 완료되면 **az1000303vms0-ip** 블레이드로 이동합니다. 
+1. 업그레이드가 완료되면 **개요** 블레이드로 이동합니다. 
 
 1. **az1000303vms0-IP** 블레이드에서 **az1000303vmss0** 에 할당된 공용 IP 주소를 메모하십시오.
 

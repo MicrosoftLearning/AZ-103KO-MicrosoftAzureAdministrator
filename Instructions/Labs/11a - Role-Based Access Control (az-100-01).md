@@ -6,26 +6,26 @@ lab:
 
 # 랩: 역할 기반 액세스 제어 
 
-이 랩의 모든 작업은 Azure 포털(PowerShell 클라우드 셸 세션 포함)에서 수행됩니다  
+이 랩의 모든 작업은 Azure Portal(PowerShell Cloud Shell 세션 포함)에서 수행됩니다.  
 
-   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 시스템에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps?view=azps-1.2.0)합니다.
+   > **참고**: Cloud Shell을 사용하지 않는 경우 랩 가상 머신에 Azure PowerShell 1.2.0 모듈(또는 최신 모듈)이 설치되어 있어야 합니다. [https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps](https://docs.microsoft.com/ko-kr/powershell/azure/install-az-ps)
 
 랩 파일: 없음
 
 ### 시나리오
   
-Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 사용하여 Azure 리소스의 프로비저닝 및 관리를 제어하려고 합니다. 또한 프로비저닝 및 관리 작업을 자동화하고 추적할 수 있기를 원합니다.
+Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure Policy를 사용하여 Azure 리소스의 프로비전 및 관리를 제어하려 합니다. 또한 프로비전 및 관리 작업의 자동화와 추적이 가능하기를 바랍니다.
 
 ### 목표
   
-이 과정을 완료하면 다음과 같은 역량을 갖추게 됩니다:
+이 랩을 완료하면 다음과 같은 역량을 갖추게 됩니다.
 
--  기본 제공 역할 기반 액세스 제어(RBAC) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스의 프로비저닝 및 관리 위임을 구성합니다
+-  기본 제공 RBAC(역할 기반 액세스 제어) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스에 대한 프로비전 및 관리의 위임을 구성합니다.
 
--  Azure 리소스를 위임된 관리자로 프로비전하고 프로비저닝 이벤트를 감사하여 위임을 확인합니다
+-  Azure 리소스를 위임된 관리자로 프로비전하고 프로비전 이벤트를 감사하여 위임을 확인합니다.
 
 
-### 연습 1: 기본 제공 역할 기반 액세스 제어(RBAC) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스의 프로비저닝 및 관리 위임을 구성합니다
+### 연습 1: 기본 제공 RBAC(역할 기반 액세스 제어) 역할 및 기본 제공 Azure 정책을 사용하여 Azure 리소스의 프로비전 및 관리 위임을 구성합니다.
 
 이 연습의 주요 작업은 다음과 같습니다:
 
@@ -40,29 +40,35 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 1: Azure AD 사용자 및 그룹 만들기
 
-1. 랩 가상 머신에서 Microsoft Edge를 시작하고 **[http://portal.azure.com**](http://portal.azure.com) 에서 Azure 포털을 찾아보고 이 랩에서 사용할 Azure 구독에서 소유자 역할이 있고 글로벌 관리자인 Microsoft 계정을 사용하여 로그인합니다. 해당 구독과 연결된 Azure AD 테넌트의.
+1. 랩 가상 머신에서 Microsoft Edge를 시작하고 Azure Portal([**http://portal.azure.com**](http://portal.azure.com))로 이동하여 Microsoft 계정을 사용하여 로그인합니다. 계정은 이 랩에서 사용할 Azure 구독에 대한 owner 역할을 가지고 있어야 하며, 해당 구독과 관련한 Azure AD 테넌트의 전역 관리자여야 합니다.
 
-1. Azure 포털에서 **Azure Active Directory** 블레이드로 이동합니다 
+1. Azure Portal에서 **Azure Active Directory** 블레이드로 이동합니다 
 
-1. **Azure Active Directory** 블레이드에서 **사용자 지정 도메인 이름** 블레이드로 이동하여 AzureAD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 해당 값을 기록합니다 - 이 작업의 나중에 필요합니다.
+1. **Azure Active Directory** 블레이드에서 **사용자 지정 도메인 이름** 블레이드로 이동하여 Azure AD 테넌트와 연결된 기본 DNS 도메인 이름을 식별합니다. 해당 값을 기록해 두세요. 이 작업의 후반부에 필요합니다.
 
 1. Azure AD **사용자 지정 도메인 이름** 블레이드에서 **사용자 - 모든 사용자** 블레이드로 이동합니다. 
 
-1. **사용자 - 모든 사용자** 블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다:
+1. **사용자 - 모든 사용자**블레이드에서 다음 설정을 사용하여 새 사용자를 만듭니다:
+
+    - 사용자 이름: **aaduser100011@&lt;DNS-domain-name&gt;** 여기에서 &lt;DNS-domain-name&gt;는 이 작업에서 앞서 식별한 기본 DNS 도메인 이름을 나타냅니다.
 
     - 이름: **aaduser100011**
-
-    - 사용자 이름: **aaduser100011@&DNS 도메인 이름>** 여기서 &lt;DNS 도메인 이름&gt;이 작업에서 앞에서 식별한 기본 DNS 도메인 이름을 나타냅니다.
-
-    - 프로필: **구성되지 않음**
-
-    - 속성: **기본값**
+    
+    - 이름: 설정되지 않음
+    
+    - 성: 설정되지 않음
 
     - 그룹: **0개 그룹 선택됨**
 
-    - 디렉터리 역할: **사용자**
-
-    - 암호: **암호 표시** 확인란을 선택하고 **암호** 텍스트 상자에 나타나는문자열을 기록합니다. 이 실험실에서 나중에 필요할 것입니다.
+    - 역할: **사용자**
+    
+    - 로그인 차단: **아니요**
+    
+    - 사용 위치: **미국**
+    
+    - 직함: 설정되지 않음
+    
+    - 부서: 설정되지 않음
 
 1. **사용자 - 모든 사용자** 블레이드에서 **그룹 - 모든 그룹**블레이드로 이동합니다. 
 
@@ -81,7 +87,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 2: Azure 리소스 그룹 만들기
 
-1. Azure 포털에서 **리소스 그룹** 블레이드로 이동합니다.
+1. Azure Portal에서 **리소스 그룹** 블레이드로 이동합니다.
 
 1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 첫 번째 리소스 그룹을만듭니다.
 
@@ -91,9 +97,9 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 영역: 랩 위치에 가장 가까운 Azure 지역의 이름및 Azure VM을 프로비전할 수 있는 위치입니다.
 
-   > **참고**: 구독에서 사용할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)참고하십시오.
+   > **참고**: 구독에서 사용할 수 있는 Azure 지역을 식별하려면 [**https://azure.microsoft.com/ko-kr/regions/offers/**](https://azure.microsoft.com/ko-kr/regions/offers/)를 참고하십시오.
 
-1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 두 번째 리소스 그룹을만듭니다.
+1. **리소스 그룹** 블레이드에서 다음 설정을 사용하여 두 번째 리소스 그룹을 만듭니다.
 
     - 리소스 그룹 이름: **az1000102-RG**
 
@@ -104,7 +110,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 #### 작업 3: 기본 제공 RBAC 역할을 통해 Azure 리소스 그룹의 관리 위임
 
-1. Azure 포털에서 **리소스 그룹** 블레이드에서 **az1000101-RG**블레이드로 이동합니다.
+1. Azure Portal의 **리소스 그룹** 블레이드에서 **az1000101-RG** 블레이드로 이동합니다.
 
 1. **az1000101-RG** 블레이드에서 **액세스 제어(IAM)** 블레이드를 표시합니다.
 
@@ -129,47 +135,47 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
     - 범위: **az1000101-RG**
 
-    - 제외: 항목을 비워 둡니다
+    - 제외: 항목을 비워 둡니다.
 
     - 정책 정의: **허용된 가상 머신 크기**
 
     - 할당 이름: **허용된 가상 머신 크기**
 
-    - 설명: **선택된 가상 머신 SKU 허용(표준_DS1_v2)**
+    - 설명: **허용되고 선택된 가상 머신 SKU(Standard_DS1_v2)**
 
     - 할당된 사람: 항목을 기본값으로 설정
 	
     - 허용된 SKU: **Standard_DS1_v2**
 
-    - 관리되는 ID 만들기: 항목을 비워 둡니다
+    - 관리 ID 만들기: 항목을 비워 둡니다.
 
-> **결과**: 이 연습을 완료한 후 Azure AD 사용자 및 Azure AD 그룹을 만들고, 두 개의 Azure 리소스 그룹을 만들고, 기본 제공 Azure VM 기여자 RBAC 역할을 통해 첫 번째 Azure 리소스 그룹의 관리를 위임하고, 동일한 리소스에 할당했습니다. Azure VM에 사용할 수 있는 SCO를 제한하는 기본 제공 Azure 정책을 그룹화합니다.
+> **결과**: 이 연습을 통해 Azure AD 사용자 및 Azure AD 그룹을 만들고, 두 개의 Azure 리소스 그룹을 만들고, 기본 제공 Azure VM contributor RBAC 역할을 통해 첫 번째 Azure 리소스 그룹의 관리를 위임했습니다. 그리고 동일한 리소스에 Azure VM에서 사용할 수 있는 SKU를 제한하는 기본 제공 Azure 정책을 할당했습니다.
 
 
-### 연습 2: Azure 리소스를 위임된 관리자로 프로비전하고 프로비저닝 이벤트를 감사하여 위임을 확인합니다
+### 연습 2: Azure 리소스를 위임된 관리자로 프로비전하고 프로비전 이벤트를 감사하여 위임을 확인합니다.
   
 이 연습의 주요 작업은 다음과 같습니다:
 
 1. Azure VM 배포에 사용할 수 있는 DNS 이름 식별
 
-1. 위임된 관리자로 비호환 Azure VM의 자동 배포 시도
+1. 위임된 관리자로 정책 미준수 Azure VM의 자동 배포 시도
 
-1. 위임된 관리자로 Azure VM을 준수하는 정책의 자동 배포 수행
+1. 위임된 관리자로 정책을 준수하는 Azure VM의 자동 배포 수행
 
 1. Azure VM 배포에 해당하는 Azure 활동 로그 이벤트 검토
 
 
 #### 작업 1: Azure VM 배포에 사용할 수 있는 DNS 이름 식별
 
-1. Azure 포털에서 클라우드 셸에서 PowerShell 세션을 시작합니다. 
+1. Azure Portal의 Cloud Shell에서 PowerShell 세션을 시작합니다. 
 
-   > **참고**: 현재 Azure 구독에서 클라우드 셸을 처음 시작하는 경우 클라우드 셸 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 저장소 계정이 생성됩니다.
+   > **참고**: 현재의 Azure 구독에서 Cloud Shell을 처음 시작하는 경우, Cloud Shell 파일을 유지하도록 Azure 파일 공유를 만들라는 메시지가 표시됩니다. 이 경우 기본값을 허용하면 자동으로 생성된 리소스 그룹에서 스토리지 계정이 생성됩니다.
 
 1. 클라우드 셸 창에서 다음 명령을 실행하여 자리 표시자로 표시 된 &lt;custom-label&gt;에 고유 할 가능성이 있는 문자열로 대체하고 자리 표시자 &lt;location-of-az1000101-RG&gt;에 **az1000101-RG** 리소스 그룹을 만든 Azure 지역의 이름으로 대체합니다.
 
    ```pwsh
    Test-AzDnsAvailability -DomainNameLabel <custom-label> -Location '<location-of-az1000101-RG>'
-   ```
+```
 
 1. 결과가 **True**인지 확인합니다. 그렇지 않은 경우 &lt;custom-label&gt;을 다른 값으로 변경하여 동일한 명령을 **True** 를 반환할 때까지 다시 실행합니다.
 
@@ -179,7 +185,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
    ```pwsh
    Register-AzResourceProvider –ProviderNamespace Microsoft.Network
-   ```
+```
 
    ```pwsh
    Register-AzResourceProvider –ProviderNamespace Microsoft.Compute
@@ -188,14 +194,15 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 추가 참고: 현재 시간 이전의 시간으로 설정된 토큰 만기를 언급하는 이러한 명령을 실행 한 후 오류가 발생하면 Cloud Shell UI에서 전원 단추 아이콘을 클릭하고 Cloud Shell 인스턴스를 재부팅하십시오. 다시 시작되면이 명령을 재 시도하십시오.
 
+참고 사항: 현재 시간 이전의 시간으로 설정된 토큰 만기를 언급하는 이러한 명령을 실행한 후 오류가 발생하면 Cloud Shell UI에서 전원 단추 아이콘을 클릭하고 Cloud Shell 인스턴스를 재부팅하십시오.  다시 시작되면 이러한 명령을 다시 시도합니다.
 
-#### 작업 2: 위임된 관리자로 비호환 Azure VM의 자동 배포 시도
+#### 작업 2: 위임된 관리자로 정책 미준수 Azure VM의 자동 배포 시도
 
 1. 비공개 모드에서 다른 브라우저 창을 실행합니다.
 
 1. 새 브라우저 창에서 Azure 포털로 이동하고 이전 연습에서 만든 사용자 계정을 사용하여 로그인 합니다. 메시지가 표시되면 암호를 새 값으로 변경합니다.
 
-1. Azure 포털에서 **리소스 그룹** 블레이드로 이동하여 리소스 그룹 **az1000101-RG** 만 볼 수 있습니다.
+1. Azure Portal에서 **리소스 그룹** 블레이드로 이동하여 리소스 그룹 **az1000101-RG**만 보이는지 확인합니다.
 
 1. Azure 포털에서 **리소스 만들기** 블레이드로 이동합니다.
 
@@ -215,7 +222,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. **Deploy a simple Ubuntu Linux VM** 블레이드 배포에서,다음 설정으로 템플릿 배포를 시작:
 
-    - 구독: 이전 연습에서 선택한 구독과 동일합니다
+    - 구독: 이전 연습에서 선택한 것과 동일한 구독
 
     - 리소스 그룹: **az1000101-RG**
 
@@ -244,7 +251,7 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. 값을 **Standard_A1**을 **Standard_DS1_v2** 로 바꾸고 변경 값을 저장합니다.
 
-1. 배포를 다시 시작합니다. 이 시간 유효성 검사는 성공했습니다. 
+1. 배포를 다시 시작합니다. 이번에는 유효성 검사가 성공했습니다. 
 
 1. 배포가 완료될 때까지 기다리지 말고 다음 작업으로 진행합니다.
 
@@ -253,13 +260,13 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 
 1. 이전 연습에서 사용한 브라우저 창으로 전환합니다.
 
-1. Azure 포털에서 **az1000101-RG** 리소스그룹 블레이드로 이동합니다.
+1. Azure Portal에서 **az1000101-RG** 리소스 그룹 블레이드로 이동합니다.
 
 1. **az1000101-RG** 리소스 그룹 블레이드에서 **활동 로그** 블레이드로 이동합니다. 
 
 1. 작업 목록에서 실패하고 성공한 유효성 검사 이벤트에 해당하는 작업 기록을 확인합니다. 
 
-1. 블레이드 보기를 새로 고치고 성공적인 배포를 나타내는 마지막 이벤트를 포함하여 Azure VM 프로비저닝에 해당하는 이벤트를 관찰합니다.
+1. 포털 하단에 있는 **Cloud Shell** 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 Azure VM 배포에 사용할 수 있는 DNS 이름을 식별하고, 정책을 비준수하는 Azure VM을 위임된 관리자로 자동 배포하려고 시도했으며, Azure VM을 준수하는 정책의 자동 배포를 수행했습니다. 동일한 위임된 관리자및 두 Azure VM 배포에 해당하는 Azure 활동 로그 항목을 검토했습니다.
 
@@ -291,3 +298,4 @@ Adatum Corporation은 Azure 역할 기반 액세스 제어 및 Azure 정책을 �
 1. **Cloud Shell** 명령 프롬프트를 닫습니다.
 
 > **결과**: 이 연습을 완료한 후 이 랩에서 사용된 리소스 그룹을 제거했습니다.
+

@@ -24,7 +24,7 @@
             "value": "2016-Datacenter"
         },
         "vmSize": {
-            "value": "Standard_DS1_v2"
+            "value": "Standard_DS2_v2"
         },
         "virtualNetworkName": {
             "value": "az1010301-vnet"
